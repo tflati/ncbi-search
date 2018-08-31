@@ -6,4 +6,3 @@ bower_components
 *.py[cod]
 *$py.class
 *.so
-cache
