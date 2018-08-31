@@ -7,164 +7,183 @@
  * # SearchctrlCtrl
  * Controller of the sraSearchApp
  */
-angular.module('sraSearchApp')
-  .controller('SearchCtrl', function ($scope, $http, Utils) {
-	  
-    $scope.search_query_text = "PRJNA462667"; //"PRJNA462667", "PRJNA398031" (multispecies)
-    $scope.database = "sra";
-    $scope.Utils = Utils;
+angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http, Utils) {
+	
+	$scope.database = "sra";
+	$scope.search_query_text = "PRJNA462667"; //"PRJNA462667", "PRJNA398031" (multispecies)
+	$scope.max_results = 100000;
+	$scope.Utils = Utils;
     
-    $scope.databases = [
-    	{
-    		id: "bioproject",
-    		name: "BioProject"
-    	},
-    	{
-    		id: "biosample",
-    		name: "BioSample"
-    	},
-    	{
-    		id: "biosystems",
-    		name: "Biosystems"
-    	},
-    	{
-    		id: "books",
-    		name: "Books"
-    	},
-    	{
-    		id: "cdd",
-    		name: "Conserved Domains"
-    	},
-    	{
-    		id: "gap",
-    		name: "dbGaP"
-    	},
-    	{
-    		id: "dbvar",
-    		name: "dbVar"
-    	},
-    	{
-    		id: "epigenomics",
-    		name: "Epigenomics"
-    	},
-    	{
-    		id: "nucest",
-    		name: "EST"
-    	},
-    	{
-    		id: "gene",
-    		name: "Gene"
-    	},
-    	{
-    		id: "genome",
-    		name: "Genome"
-    	},
-    	{
-    		id: "gds",
-    		name: "GEO Datasets"
-    	},
-    	{
-    		id: "geoprofiles",
-    		name: "GEO Profiles"
-    	},
-    	{
-    		id: "nucgss",
-    		name: "GSS"
-    	},
-    	{
-    		id: "homologene",
-    		name: "HomoloGene"
-    	},
-    	{
-    		id: "mesh",
-    		name: "MeSH"
-    	},
-    	{
-    		id: "toolkit",
-    		name: "NCBI C++ Toolkit"
-    	},
-    	{
-    		id: "ncbisearch",
-    		name: "NCBI Web Site"
-    	},
-    	{
-    		id: "nlmcatalog",
-    		name: "NLM Catalog"
-    	},
-    	{
-    		id: "nuccore",
-    		name: "Nucleotide"
-    	},
-    	{
-    		id: "omia",
-    		name: "OMIA"
-    	},
-    	{
-    		id: "popset",
-    		name: "PopSet"
-    	},
-    	{
-    		id: "probe",
-    		name: "Probe"
-    	},
-    	{
-    		id: "protein",
-    		name: "Protein"
-    	},
-    	{
-    		id: "proteinclusters",
-    		name: "Protein Clusters"
-    	},
-    	{
-    		id: "pcassay",
-    		name: "PubChem BioAssay"
-    	},
-    	{
-    		id: "pccompound",
-    		name: "PubChem Compound"
-    	},
-    	{
-    		id: "pcsubstance",
-    		name: "PubChem Substance"
-    	},
-    	{
-    		id: "pubmed",
-    		name: "PubMed"
-    	},
-    	{
-    		id: "pmc",
-    		name: "PubMed Central"
-    	},
-    	{
-    		id: "snp",
-    		name: "SNP"
-    	},
-    	{
-    		id: "sra",
-    		name: "SRA"
-    	},
-    	{
-    		id: "structure",
-    		name: "Structure"
-    	},
-    	{
-    		id: "taxonomy",
-    		name: "Taxonomy"
-    	},
-    	{
-    		id: "unigene",
-    		name: "UniGene"
-    	},
-    	{
-    		id: "unists",
-    		name: "UniSTS"
-    	}
-    ];
+	$scope.databases = [
+		{
+			id: "bioproject",
+			name: "BioProject"
+		},
+		{
+			id: "biosample",
+			name: "BioSample"
+		},
+		{
+			id: "biosystems",
+			name: "Biosystems"
+		},
+		{
+			id: "books",
+			name: "Books"
+		},
+		{
+			id: "cdd",
+			name: "Conserved Domains"
+		},
+		{
+			id: "gap",
+			name: "dbGaP"
+		},
+		{
+			id: "dbvar",
+			name: "dbVar"
+		},
+		{
+			id: "epigenomics",
+			name: "Epigenomics"
+		},
+		{
+			id: "nucest",
+			name: "EST"
+		},
+		{
+			id: "gene",
+			name: "Gene"
+		},
+		{
+			id: "genome",
+			name: "Genome"
+		},
+		{
+			id: "gds",
+			name: "GEO Datasets"
+		},
+		{
+			id: "geoprofiles",
+			name: "GEO Profiles"
+		},
+		{
+			id: "nucgss",
+			name: "GSS"
+		},
+		{
+			id: "homologene",
+			name: "HomoloGene"
+		},
+		{
+			id: "mesh",
+			name: "MeSH"
+		},
+		{
+			id: "toolkit",
+			name: "NCBI C++ Toolkit"
+		},
+		{
+			id: "ncbisearch",
+			name: "NCBI Web Site"
+		},
+		{
+			id: "nlmcatalog",
+			name: "NLM Catalog"
+		},
+		{
+			id: "nuccore",
+			name: "Nucleotide"
+		},
+		{
+			id: "omia",
+			name: "OMIA"
+		},
+		{
+			id: "popset",
+			name: "PopSet"
+		},
+		{
+			id: "probe",
+			name: "Probe"
+		},
+		{
+			id: "protein",
+			name: "Protein"
+		},
+		{
+			id: "proteinclusters",
+			name: "Protein Clusters"
+		},
+		{
+			id: "pcassay",
+			name: "PubChem BioAssay"
+		},
+		{
+			id: "pccompound",
+			name: "PubChem Compound"
+		},
+		{
+			id: "pcsubstance",
+			name: "PubChem Substance"
+		},
+		{
+			id: "pubmed",
+			name: "PubMed"
+		},
+		{
+			id: "pmc",
+			name: "PubMed Central"
+		},
+		{
+			id: "snp",
+			name: "SNP"
+		},
+		{
+			id: "sra",
+			name: "SRA"
+		},
+		{
+			id: "structure",
+			name: "Structure"
+		},
+		{
+			id: "taxonomy",
+			name: "Taxonomy"
+		},
+		{
+			id: "unigene",
+			name: "UniGene"
+		},
+		{
+			id: "unists",
+			name: "UniSTS"
+		}
+	];
     
     $scope.result = undefined;
     $scope.search_started = false;
     $scope.search_finished = false;
     $scope.filters = [];
+    $scope.sortType = "id";
+    $scope.sortReverse = false;
+    
+    $scope.sortTable = function(x){
+    	if ($scope.sortType == x) $scope.sortReverse = !$scope.sortReverse;
+    	$scope.sortType = x;
+    };
+    
+    $scope.sortFx = function(row){
+    	if($scope.sortType == "id") return row.id;
+    	if($scope.sortType == "paper_id") return row.paper_id;
+    	if($scope.sortType == "organisms") return row.experiments.reduce((n, exp) => {n.push(exp.Pool.Member.organism); return n}, []).filter((x,i,arr) => arr.indexOf(x) === i).join(',');
+    	if($scope.sortType == "number_experiments") return row.experiments.length;
+    	if($scope.sortType == "number_runs") return row.experiments.reduce((n, exp) => n + $scope.get_runs(exp).length, 0);
+    	if($scope.sortType == "library_sources") return row.experiments.reduce((n, exp) => {n.push($scope.get_library_source(exp)); return n}, []).filter((x,i,arr) => arr.indexOf(x) === i).join(',');
+    	if($scope.sortType == "library_layouts") return row.experiments.reduce((n, exp) => {n.concat($scope.get_layouts(exp)); return n}, []).filter((x,i,arr) => arr.indexOf(x) === i).join(',');
+    	if($scope.sortType == "platform") return row.experiments.reduce((n, exp) => {n.push($scope.get_platform(exp)); return n}, []).filter((x,i,arr) => arr.indexOf(x) === i).join(',');
+    	return row.id;
+    };
     
     $scope.add_filter = function(x, type, filterFunction){
     	// Organism filter
@@ -199,8 +218,8 @@ angular.module('sraSearchApp')
 	    		var data = bioproject.experiments[i];
 	    		
 	    		// Platform filter
-	    		$scope.add_filter(data.EXPERIMENT.PLATFORM.ILLUMINA.INSTRUMENT_MODEL["$t"], "PLATFORM", function(o, x){
-	    			return o.EXPERIMENT.PLATFORM.ILLUMINA.INSTRUMENT_MODEL["$t"] == x.value;
+	    		$scope.add_filter(data.EXPERIMENT.PLATFORM[Object.keys(data.EXPERIMENT.PLATFORM)[0]].INSTRUMENT_MODEL["$t"], "PLATFORM", function(o, x){
+	    			return o.EXPERIMENT.PLATFORM[Object.keys(o.EXPERIMENT.PLATFORM)[0]].INSTRUMENT_MODEL["$t"] == x.value;
 	        		});
 	    		
 	    		// Layout filter
@@ -226,6 +245,9 @@ angular.module('sraSearchApp')
 	        		});   
 	    		
 	    		// Organism filter
+	    		if(data.Pool == undefined || data.Pool.Member == undefined || data.Pool.Member.organism == undefined)
+	    			console.log("MISSING ORGANISM?", data);
+	    		
 	    		$scope.add_filter(data.Pool.Member.organism, "ORGANISM", function(o, x){
 	    			return o.Pool.Member.organism == x.value;
 	        		});
@@ -237,8 +259,9 @@ angular.module('sraSearchApp')
     
     $scope.get_runs = function(x){return angular.isArray(x.RUN_SET.RUN) ? x.RUN_SET.RUN : [x.RUN_SET.RUN];};
     $scope.get_layouts = function(x){return Object.keys(x.EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_LAYOUT);};
-    $scope.get_layout_sources = function(x){return x.EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SOURCE["$t"];};
-    $scope.get_platforms = function(x){return x.EXPERIMENT.PLATFORM.ILLUMINA.INSTRUMENT_MODEL["$t"];};
+    $scope.get_library_source = function(x){return x.EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SOURCE["$t"];};
+    $scope.get_platform = function(x){return x.EXPERIMENT.PLATFORM[Object.keys(x.EXPERIMENT.PLATFORM)[0]].INSTRUMENT_MODEL["$t"];};
+    $scope.get_organism = function(x){return x.Pool.Member.organism;};
     $scope.get_experiments = function(x){return x.experiments;};
     
     this.search = function(){
@@ -250,6 +273,7 @@ angular.module('sraSearchApp')
     	var parameters = [];
     	parameters.push("db="+$scope.database);
     	parameters.push("query="+$scope.search_query_text);
+    	parameters.push("max_hits="+$scope.max_results);
     	
     	var search_api = "http://localhost/sra_django_api/search/" + parameters.join("&");
         console.log("SEARCH", search_api);

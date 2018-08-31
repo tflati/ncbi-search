@@ -29,29 +29,41 @@
 				<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | apply:get_runs | lengths | sum"></b> runs passed the filters</div>
 			</p>
 			
-			<md-list flex>
+			<table>
+				<thead>
+					<tr>
+						<th ng-click="sortTable('id')">ID <span ng-show="sortType == 'id'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('paper_id')">Paper <span ng-show="sortType == 'paper_id'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('organisms')">Organism(s) <span ng-show="sortType == 'organism'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('number_experiments')">Experiment(s) <span ng-show="sortType == 'number_experiments'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('number_runs')">Sample(s) <span ng-show="sortType == 'number_runs'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('library_sources')">Library source(s) <span ng-show="sortType == 'library_sources'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('library_layouts')">Library layout(s) <span ng-show="sortType == 'library_layouts'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+						<th ng-click="sortTable('platforms')">Platform(s) <span ng-show="sortType == 'platforms'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="bioproject in result | filterApplier:filters | orderBy:sortFx:sortReverse">
+						<td><a target="_blank" ng-href='https://www.ncbi.nlm.nih.gov/bioproject/{{bioproject.id}}'>{{ bioproject.id }}</a></td>
+						<td><a target="_blank" ng-if="bioproject.paper_id" ng-href="https://www.ncbi.nlm.nih.gov/pubmed/{{bioproject.paper_id}}"><i class="fas fa-2x fa-file-pdf" style="color: red;"></i></a><i ng-if="!bioproject.paper_id" class="fas fa-2x fa-file-pdf" style="color: lightgrey;"></i></td>
+						<td>{{ bioproject.experiments | apply:get_organism | concat | uniq | joinKeys:', ' }}</td>
+						<td>{{ bioproject.experiments.length }}</td>
+						<td>{{ bioproject.experiments | apply:get_runs | lengths | sum }}</td>
+						<td>{{ bioproject.experiments | apply:get_library_source | concat | uniq | joinKeys:', ' || "N/A" }}</td>
+						<td>{{ bioproject.experiments | apply:get_layouts | concat | uniq | joinKeys:', ' || "N/A" }}</td>
+						<td>{{ bioproject.experiments | apply:get_platform | concat | uniq | joinKeys:', ' || "N/A"}}</td>
+					</tr>
+				</tbody>
+			</table>
+<!-- 			<md-list flex> -->
 				
 <!-- 				<div paging -->
 <!-- 					  page="1"  -->
 <!-- 					  page-size="10"  -->
 <!-- 					  total="result | filterApplier:filters | length" -->
 <!-- 					  paging-action="goToPage('Page clicked', result | filterApplier:filters, page, pageSize, total)"> -->
-					  
-			        <md-list-item class="md-3-line" ng-repeat="bioproject in result | filterApplier:filters">
-				        <img src="images/project.png" class="md-avatar" alt="Result" />
-				        <div class="md-list-item-text" layout="column">
-	<!-- 			        	<p>{{bioproject | json}}</p> -->
-				          <h3><b>ID</b>: <a target="_blank" ng-href='https://www.ncbi.nlm.nih.gov/bioproject/{{bioproject.id}}'>{{ bioproject.id }}</a></h3>
-				          <p><b>Paper</b>: <a target="_blank" ng-if="bioproject.paper_id" ng-href="https://www.ncbi.nlm.nih.gov/pubmed/{{bioproject.paper_id}}">{{bioproject.paper_id}}</a><span ng-if="!bioproject.paper_id">N/A</</span></p>
-				          <p><b>Experiment(s)</b>: {{ bioproject.experiments.length }}</p>
-				          <p><b>Sample(s)</b>: {{ bioproject.experiments | apply:get_runs | lengths | sum }}</p>
-				          <p><b>Platform(s)</b>: {{ bioproject.experiments | apply:get_platforms | concat | uniq | joinKeys:',' || "N/A"}}</p>
-				          <p><b>Library layout(s)</b>: {{ bioproject.experiments | apply:get_layouts | concat | uniq | joinKeys:',' || "N/A" }}</p>
-				          <p><b>Library source(s)</b>: {{ bioproject.experiments | apply:get_layout_sources | concat | uniq | joinKeys:',' || "N/A" }}</p>
-				        </div>
-		        	</md-list-item>
 <!-- 	        	</div> -->
-        	</md-list>
+<!--         	</md-list> -->
 		</div>
 	</div>
 </div>

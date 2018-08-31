@@ -38,7 +38,12 @@
 		    
 		    <md-input-container>
 		    	<label>Query</label>
-		      	<input title="Search anything (e.g., 'Stress mice', 'Autism mice', etc.)" ng-model="search_query_text">
+		      	<input ng-keyup="$event.keyCode == 13 && ctrl.search()" title="Search anything (e.g., 'Stress mice', 'Autism mice', etc.)" ng-model="search_query_text">
+		    </md-input-container>
+		    
+		    <md-input-container>
+		    	<label>Max results</label>
+		    	<input title="Max results" ng-model="max_results">
 		    </md-input-container>
 		    
 		    <md-button ng-click="ctrl.search()" style="color: black; top:-10px;" class="md-raised md-accent md-hue-3">Search</md-button>

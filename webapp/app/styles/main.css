@@ -150,3 +150,5 @@ md-list-item .md-list-item-inner::before {
 	margin: 5px;
 }
 
+
+tr:nth-child(even) {background-color: #f2f2f2;}
