@@ -1,0 +1,57 @@
+<div layout="row" layout-align="start start" class="main-container">
+
+	<div flex="25" layout="column" layout-align="start center" class="side-filters">
+		<p><b>Filters</b>:</p>
+		<div layout="column">
+			<div ng-repeat="filter in filters">
+		        <md-subheader class="md-no-sticky">{{filter.type}}</md-subheader>
+		        <div class="small-margin" ng-repeat="value in filter.values">
+		            <md-checkbox class="small-checkbox md-hue-3" aria-label="{{filter.type}} filter" ng-model="value.selected"></md-checkbox>
+		            {{value.value}} ({{value.count}} exp.)
+		        </div>
+	        </div>
+		</div>
+	</div>
+	
+	<div flex layout="column" layout-align="start start" class="result-container" layout-padding>
+		
+		<div ng-if="search_finished">
+			
+			<p ng-if="result.length != undefined">
+				<div><b ng-bind="result.length"></b> bioproject(s) found</div>
+				<div><b>{{result | apply:get_experiments | concat | length}}</b> experiment(s)</div>
+				<div><b>{{result | apply:get_experiments | concat | apply:get_runs | lengths | sum}}</b> sample(s)</div>
+			</p>
+			
+			<p>
+				<div><b ng-bind="result | filterApplier:filters | length"></b> bioprojects passed the filters</div>
+				<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | length"></b> experiments passed the filters</div>
+				<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | apply:get_runs | lengths | sum"></b> runs passed the filters</div>
+			</p>
+			
+			<md-list flex>
+				
+<!-- 				<div paging -->
+<!-- 					  page="1"  -->
+<!-- 					  page-size="10"  -->
+<!-- 					  total="result | filterApplier:filters | length" -->
+<!-- 					  paging-action="goToPage('Page clicked', result | filterApplier:filters, page, pageSize, total)"> -->
+					  
+			        <md-list-item class="md-3-line" ng-repeat="bioproject in result | filterApplier:filters">
+				        <img src="images/project.png" class="md-avatar" alt="Result" />
+				        <div class="md-list-item-text" layout="column">
+	<!-- 			        	<p>{{bioproject | json}}</p> -->
+				          <h3><b>ID</b>: <a target="_blank" ng-href='https://www.ncbi.nlm.nih.gov/bioproject/{{bioproject.id}}'>{{ bioproject.id }}</a></h3>
+				          <p><b>Paper</b>: <a target="_blank" ng-if="bioproject.paper_id" ng-href="https://www.ncbi.nlm.nih.gov/pubmed/{{bioproject.paper_id}}">{{bioproject.paper_id}}</a><span ng-if="!bioproject.paper_id">N/A</</span></p>
+				          <p><b>Experiment(s)</b>: {{ bioproject.experiments.length }}</p>
+				          <p><b>Sample(s)</b>: {{ bioproject.experiments | apply:get_runs | lengths | sum }}</p>
+				          <p><b>Platform(s)</b>: {{ bioproject.experiments | apply:get_platforms | concat | uniq | joinKeys:',' || "N/A"}}</p>
+				          <p><b>Library layout(s)</b>: {{ bioproject.experiments | apply:get_layouts | concat | uniq | joinKeys:',' || "N/A" }}</p>
+				          <p><b>Library source(s)</b>: {{ bioproject.experiments | apply:get_layout_sources | concat | uniq | joinKeys:',' || "N/A" }}</p>
+				        </div>
+		        	</md-list-item>
+<!-- 	        	</div> -->
+        	</md-list>
+		</div>
+	</div>
+</div>

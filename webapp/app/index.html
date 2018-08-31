@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/fontawesome-all.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="sraSearchApp" ng-controller="SearchCtrl as ctrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <md-toolbar>
+      <div class="md-toolbar-tools sra-toolbar">
+        <h2>SRA Search</h2>
+        <div id="bar_search">
+			<md-input-container>
+		      <label>Database</label>
+	          <md-select ng-model="database" style="min-width: 150px;">
+	            <md-option ng-repeat="db in databases" ng-value="db.id">
+	              {{db.name}}
+	            </md-option>
+	          </md-select>
+		    </md-input-container>
+		    
+		    <md-input-container>
+		    	<label>Query</label>
+		      	<input title="Search anything (e.g., 'Stress mice', 'Autism mice', etc.)" ng-model="search_query_text">
+		    </md-input-container>
+		    
+		    <md-button ng-click="ctrl.search()" style="color: black; top:-10px;" class="md-raised md-accent md-hue-3">Search</md-button>
+		    
+		    <span ng-if="search_started">
+				<i class="fas fa-cog fa-2x fa-spin colored-spin"></i>
+			</span>
+		</div>
+		
+        <span flex md-truncate></span>
+        
+        <md-button class="md-raised md-accent md-hue-3" aria-label="Learn More">
+          Saved searches
+        </md-button>
+        <md-button class="md-fab md-mini md-hue-3" aria-label="Add to your favourite searches" title="Add to your favourite searches">
+          <ng-md-icon icon="favorite" style="color: cornflowerblue;"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    
+    <div layout="column" style="height:100%">
+	    <div class="container" style="height:100%">
+	    	<div ng-view="" style="height:100%"></div>
+	    </div>
+
+<!-- 	    <div class="footer"> -->
+<!-- 	      <div class="container"> -->
+<!-- 	        <p align="center">All rights reserved.</p> -->
+<!-- 	      </div> -->
+<!-- 	    </div> -->
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="bower_components/angular-paging/dist/paging.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        
+        <script src="scripts/services/Utils.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/filters/joinKeys.js"></script>
+        <script src="scripts/filters/filters.js"></script>
+        <script src="scripts/filters/experiment_filters.js"></script>
+        <script src="scripts/filters/apply.js"></script>
+        <script src="scripts/filters/length.js"></script>
+        <script src="scripts/filters/lengths.js"></script>
+        <script src="scripts/filters/sum.js"></script>
+        <script src="scripts/filters/uniq.js"></script>
+        <script src="scripts/filters/concat.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
