@@ -19,7 +19,9 @@ angular
     'ngSanitize',
     'ngMaterial',
     'ngMdIcons',
-    'bw.paging'
+    'bw.paging',
+    'toaster',
+    'chart.js'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,6 +29,16 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'register'
       })
       .otherwise({
         redirectTo: '/'
@@ -36,6 +48,7 @@ angular
 	  $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 	  $httpProvider.defaults.xsrfCookieName = 'csrftoken';
 	  $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+	  $httpProvider.defaults.withCredentials = true;
   })
   .config(function($mdThemingProvider) {
 	  $mdThemingProvider.theme('default')

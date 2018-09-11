@@ -1,13 +1,19 @@
 <div layout="row" layout-align="start start" class="main-container">
 
-	<div flex="25" layout="column" layout-align="start center" class="side-filters">
+	<div ng-if="filters.length > 0" flex="25" layout="column" layout-align="start center" class="side-filters">
 		<p><b>Filters</b>:</p>
-		<div layout="column">
+		
+		<md-button ng-click="clear_filters()" class="md-raised md-accent md-hue-3" aria-label="Reset all filters" title="Reset all filters">
+			<i class="fas fa-trash"></i> Clear all filters
+        </md-button>
+        
+		<div layout="column" layout-padding>
 			<div ng-repeat="filter in filters">
-		        <md-subheader class="md-no-sticky">{{filter.type}}</md-subheader>
-		        <div class="small-margin" ng-repeat="value in filter.values">
-		            <md-checkbox class="small-checkbox md-hue-3" aria-label="{{filter.type}} filter" ng-model="value.selected"></md-checkbox>
-		            {{value.value}} ({{value.count}} exp.)
+		        <md-subheader class="md-no-sticky">
+		        	<md-checkbox class="small-checkbox md-warn" title="Toggle all sub-filters" aria-label="Toggle all sub-filters" ng-model="filter.selected" ng-change="toggle_all(filter)")></md-checkbox> {{filter.label}}</md-subheader>
+		        <div class="small-margin" ng-repeat="f in filter.values">
+		            <md-checkbox class="small-checkbox md-hue-3" title="{{filter.type}} filter" aria-label="{{filter.type}} filter" ng-model="f.selected" ng-change="filter_clicked(f, filter)")></md-checkbox>
+		            {{f.value}} ({{f.count}} exp.)
 		        </div>
 	        </div>
 		</div>
@@ -17,44 +23,91 @@
 		
 		<div ng-if="search_finished">
 			
-			<p ng-if="result.length != undefined">
-				<div><b ng-bind="result.length"></b> bioproject(s) found</div>
-				<div><b>{{result | apply:get_experiments | concat | length}}</b> experiment(s)</div>
-				<div><b>{{result | apply:get_experiments | concat | apply:get_runs | lengths | sum}}</b> sample(s)</div>
-			</p>
+			<md-card>
+		        <md-card-title>
+		          <md-card-title-text>
+		            <span class="md-headline">Results</span>
+		          </md-card-title-text>
+		        </md-card-title>
+		        <md-card-content layout="column">
+		        	
+<!-- 		        	<section> -->
+<!-- 			        	<p ng-if="result.length != undefined"> -->
+<!-- 							<div><b ng-bind="result.length"></b> bioproject(s) found</div> -->
+<!-- 							<div><b>{{result | apply:get_experiments | concat | length}}</b> experiment(s)</div> -->
+<!-- 							<div><b>{{result | apply:get_experiments | concat | apply:get_runs | lengths | sum}}</b> sample(s)</div> -->
+<!-- 						</p> -->
+						
+<!-- 						<p> -->
+<!-- 							<div><b ng-bind="result | filterApplier:filters | length"></b> bioprojects passed the filters</div> -->
+<!-- 							<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | length"></b> experiments passed the filters</div> -->
+<!-- 							<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | apply:get_runs | lengths | sum"></b> runs passed the filters</div> -->
+<!-- 						</p> -->
+<!-- 					</section> -->
 			
-			<p>
-				<div><b ng-bind="result | filterApplier:filters | length"></b> bioprojects passed the filters</div>
-				<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | length"></b> experiments passed the filters</div>
-				<div><b ng-bind="result | apply:get_experiments | concat | expFilterApplier:filters | apply:get_runs | lengths | sum"></b> runs passed the filters</div>
-			</p>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th ng-click="sortTable('id')">ID <span ng-show="sortType == 'id'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('paper_id')">Paper <span ng-show="sortType == 'paper_id'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('organisms')">Organism(s) <span ng-show="sortType == 'organism'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('number_experiments')">Experiment(s) <span ng-show="sortType == 'number_experiments'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('number_runs')">Sample(s) <span ng-show="sortType == 'number_runs'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('library_sources')">Library source(s) <span ng-show="sortType == 'library_sources'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('library_layouts')">Library layout(s) <span ng-show="sortType == 'library_layouts'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th ng-click="sortTable('platforms')">Platform(s) <span ng-show="sortType == 'platforms'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
+									<th>Phenodata</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="bioproject in result | filterApplier:filters | orderBy:sortFx:sortReverse">
+									<td><a layout="row" layout-align="center center" title="See this bioproject in NCBI" target="_blank" ng-href='https://www.ncbi.nlm.nih.gov/bioproject/{{bioproject.id}}'>{{ bioproject.id }}</a></td>
+									<td>
+										<div layout="row" layout-align="center center">
+											<a title="See this paper on PubMed" target="_blank" ng-if="bioproject.paper_id" ng-href="https://www.ncbi.nlm.nih.gov/pubmed/{{bioproject.paper_id}}"><i class="fas fa-2x fa-file-pdf" style="color: red;"></i></a>
+											<i title="This bioproject has no paper published on PubMed" ng-if="!bioproject.paper_id" class="fas fa-2x fa-file-pdf" style="color: lightgrey;"></i>
+										</div>
+									</td>
+									<td><div layout="row" layout-align="center center">{{ bioproject.experiments | apply:get_organism | concat | uniq | joinKeys:', ' }}</div></td>
+									<td><div layout="row" layout-align="center center">{{ bioproject.experiments.length }}</div></td>
+									<td><div layout="row" layout-align="center center">{{ bioproject.experiments | apply:get_runs | lengths | sum }}</div></td>
+									<td><div layout="row" layout-align="center center">{{ bioproject.experiments | apply:get_library_source | concat | uniq | joinKeys:', ' || "N/A" }}</div></td>
+									<td><div layout="row" layout-align="center center">{{ bioproject.experiments | apply:get_layouts | concat | uniq | joinKeys:', ' || "N/A" }}</div></td>
+									<td><div layout="row" layout-align="center center">{{ bioproject.experiments | apply:get_platform | concat | uniq | joinKeys:', ' || "N/A"}}</div></td>
+									<td><a layout="row" layout-align="center center" ng-click="see_table(bioproject)" title="See the phenodata of this bioproject" target="_blank"><i class="fas fa-2x fa-file-powerpoint" style="color: darkcyan;"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+		        </md-card-content>
+			</md-card>
 			
-			<table>
-				<thead>
-					<tr>
-						<th ng-click="sortTable('id')">ID <span ng-show="sortType == 'id'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('paper_id')">Paper <span ng-show="sortType == 'paper_id'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('organisms')">Organism(s) <span ng-show="sortType == 'organism'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('number_experiments')">Experiment(s) <span ng-show="sortType == 'number_experiments'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('number_runs')">Sample(s) <span ng-show="sortType == 'number_runs'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('library_sources')">Library source(s) <span ng-show="sortType == 'library_sources'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('library_layouts')">Library layout(s) <span ng-show="sortType == 'library_layouts'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-						<th ng-click="sortTable('platforms')">Platform(s) <span ng-show="sortType == 'platforms'" class="{{sortReverse ? 'fa fa-caret-up' : 'fa fa-caret-down'}}"></span></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="bioproject in result | filterApplier:filters | orderBy:sortFx:sortReverse">
-						<td><a target="_blank" ng-href='https://www.ncbi.nlm.nih.gov/bioproject/{{bioproject.id}}'>{{ bioproject.id }}</a></td>
-						<td><a target="_blank" ng-if="bioproject.paper_id" ng-href="https://www.ncbi.nlm.nih.gov/pubmed/{{bioproject.paper_id}}"><i class="fas fa-2x fa-file-pdf" style="color: red;"></i></a><i ng-if="!bioproject.paper_id" class="fas fa-2x fa-file-pdf" style="color: lightgrey;"></i></td>
-						<td>{{ bioproject.experiments | apply:get_organism | concat | uniq | joinKeys:', ' }}</td>
-						<td>{{ bioproject.experiments.length }}</td>
-						<td>{{ bioproject.experiments | apply:get_runs | lengths | sum }}</td>
-						<td>{{ bioproject.experiments | apply:get_library_source | concat | uniq | joinKeys:', ' || "N/A" }}</td>
-						<td>{{ bioproject.experiments | apply:get_layouts | concat | uniq | joinKeys:', ' || "N/A" }}</td>
-						<td>{{ bioproject.experiments | apply:get_platform | concat | uniq | joinKeys:', ' || "N/A"}}</td>
-					</tr>
-				</tbody>
-			</table>
+			<md-card>
+		        <md-card-title>
+		          <md-card-title-text>
+		            <span class="md-headline">Charts</span>
+		          </md-card-title-text>
+		        </md-card-title>
+		        <md-card-content layout="column">
+			
+					<section>
+						<div layout="row" layout-wrap>
+							
+							<div ng-repeat="filter in filters" layout="column" layout-align="start start" style="margin-bottom: 30px; margin-right: 20px; max-height: 500px;">
+								<h3 layout="row" layout-align="start center"><span>{{filter.label}}</span>&nbsp;&nbsp;<a href="#" ng-click="see_chart(filter)" class="fas fa-chart-bar fa-2x" style="text-decoration: none; color: #ff8700;"></a></h3>
+								<canvas
+									class="chart chart-bar"
+									chart-data="filter.data"
+									chart-labels="filter.labels"
+								></canvas>
+							</div>
+						</div>
+					</section>
+					
+				</md-card-content>
+			</md-card>
+			
 <!-- 			<md-list flex> -->
 				
 <!-- 				<div paging -->

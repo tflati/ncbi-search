@@ -1,0 +1,31 @@
+<md-dialog style="min-height: 90%; min-width: 95%;" aria-label="Chart for: {{filter.label}}">
+
+	<md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Phenodata for: {{table.title}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <ng-md-icon icon="close" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			
+			<table>
+				<thead>
+					<tr>
+						<th ng-repeat="h in table.header track by $index">{{h}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="row in table.rows">
+						<td ng-repeat="value in row track by $index">{{value}}</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		</div>
+	</md-dialog-content>
+</md-dialog>

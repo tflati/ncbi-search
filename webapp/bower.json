@@ -14,7 +14,9 @@
     "angular-material": "^1.1.10",
     "angular-material-icons": "^0.7.1",
     "components-font-awesome": "^5.0.6",
-    "angular-paging": "^2.2.2"
+    "angular-paging": "^2.2.2",
+    "AngularJS-Toaster": "angularjs-toaster#^2.2.0",
+    "angular-chart.js": "^1.1.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

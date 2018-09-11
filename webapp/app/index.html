@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
     <link rel="stylesheet" href="bower_components/components-font-awesome/css/fontawesome-all.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -21,6 +23,8 @@
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+	<toaster-container></toaster-container>
 
     <!-- Add your site or application content here -->
     <md-toolbar>
@@ -46,7 +50,7 @@
 		    	<input title="Max results" ng-model="max_results">
 		    </md-input-container>
 		    
-		    <md-button ng-click="ctrl.search()" style="color: black; top:-10px;" class="md-raised md-accent md-hue-3">Search</md-button>
+		    <md-button ng-click="ctrl.search()" style="top:-10px;" class="md-raised md-accent md-hue-3"><b style="color: black;">Search</b></md-button>
 		    
 		    <span ng-if="search_started">
 				<i class="fas fa-cog fa-2x fa-spin colored-spin"></i>
@@ -55,18 +59,27 @@
 		
         <span flex md-truncate></span>
         
-        <md-button class="md-raised md-accent md-hue-3" aria-label="Learn More">
-          Saved searches
-        </md-button>
-        <md-button class="md-fab md-mini md-hue-3" aria-label="Add to your favourite searches" title="Add to your favourite searches">
-          <ng-md-icon icon="favorite" style="color: cornflowerblue;"></ng-md-icon>
-        </md-button>
+        <div ng-if="user.loggedIn">
+        	<span>{{user.username}}</span>
+        	<md-button ng-click="user.logout()" href="#!logout" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Logout">
+	          <i class="fas fa-exit" md-colors="{color:'primary'}"></i> <b>logout</b>
+	        </md-button>
+        </div>
+        
+        <div ng-if="!user.loggedIn">
+	        <md-button href="#!login" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Login">
+	          <i class="fas fa-key" md-colors="{color:'primary'}"></i> <b>login</b>
+	        </md-button>
+	        <md-button href="#!register" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Register">
+	          <i class="fas fa-sign-in-alt icon" md-colors="{color:'primary'}"></i> <b>register</b>
+	        </md-button>
+        </div>
       </div>
     </md-toolbar>
     
     <div layout="column" style="height:100%">
 	    <div class="container" style="height:100%">
-	    	<div ng-view="" style="height:100%"></div>
+	    	<div ng-view style="height:100%"></div>
 	    </div>
 
 <!-- 	    <div class="footer"> -->
@@ -102,6 +115,9 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
     <script src="bower_components/angular-paging/dist/paging.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -111,6 +127,8 @@
         <script src="scripts/services/Utils.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/chartDialog.js"></script>
+        <script src="scripts/controllers/tableDialog.js"></script>
         <script src="scripts/filters/joinKeys.js"></script>
         <script src="scripts/filters/filters.js"></script>
         <script src="scripts/filters/experiment_filters.js"></script>
@@ -120,6 +138,10 @@
         <script src="scripts/filters/sum.js"></script>
         <script src="scripts/filters/uniq.js"></script>
         <script src="scripts/filters/concat.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/directives/compareto.js"></script>
+        <script src="scripts/services/user.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -3,7 +3,6 @@ angular.module('sraSearchApp').filter('filterApplier', function () {
 	  if (input == undefined) return input;
 	  
 	  var original = input;
-//	  console.log("START", original, filters);
 	  
 	  for(var i in filters){
 		  var filterGroup = filters[i];
@@ -11,7 +10,6 @@ angular.module('sraSearchApp').filter('filterApplier', function () {
 		  
 		  for(var o in original){
 			  var bioproject = original[o];
-//			  console.log("FILTER", filter, bioproject);
 			  
 			  var filtered_bioproject = {id: bioproject.id, experiments: []};
 			  
@@ -20,7 +18,7 @@ angular.module('sraSearchApp').filter('filterApplier', function () {
 				  
 				  for(var j in filterGroup.values){
 					  var filter = filterGroup.values[j];
-					  var accept = filter.eval(experiment, filter);
+					  var accept = filter.eval(experiment, filter, filterGroup.type);
 //					  console.log("\t\tFILTER GROUP", filterGroup.type, filter.value, bioproject.id, experiment, accept);
 					  if (filter.selected && accept){
 						  filtered_bioproject.experiments.push(experiment);
@@ -36,12 +34,8 @@ angular.module('sraSearchApp').filter('filterApplier', function () {
 		  }
 		  
 		  original = filtered;
-//		  console.log("\tFILTER GROUP:", filterGroup, original);
-//		  console.log("FILTER", filterGroup, original);
 	  }
 	  
-//	  console.log("FILTER LAST", original);
-		  
 	  return original;
   };
 });
