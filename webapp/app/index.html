@@ -19,64 +19,13 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="sraSearchApp" ng-controller="SearchCtrl as ctrl">
+  <body ng-app="sraSearchApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
 	<toaster-container></toaster-container>
 
-    <!-- Add your site or application content here -->
-    <md-toolbar>
-      <div class="md-toolbar-tools sra-toolbar">
-        <h2>SRA Search</h2>
-        <div id="bar_search">
-			<md-input-container>
-		      <label>Database</label>
-	          <md-select ng-model="database" style="min-width: 150px;">
-	            <md-option ng-repeat="db in databases" ng-value="db.id">
-	              {{db.name}}
-	            </md-option>
-	          </md-select>
-		    </md-input-container>
-		    
-		    <md-input-container>
-		    	<label>Query</label>
-		      	<input ng-keyup="$event.keyCode == 13 && ctrl.search()" title="Search anything (e.g., 'Stress mice', 'Autism mice', etc.)" ng-model="search_query_text">
-		    </md-input-container>
-		    
-		    <md-input-container>
-		    	<label>Max results</label>
-		    	<input title="Max results" ng-model="max_results">
-		    </md-input-container>
-		    
-		    <md-button ng-click="ctrl.search()" style="top:-10px;" class="md-raised md-accent md-hue-3"><b style="color: black;">Search</b></md-button>
-		    
-		    <span ng-if="search_started">
-				<i class="fas fa-cog fa-2x fa-spin colored-spin"></i>
-			</span>
-		</div>
-		
-        <span flex md-truncate></span>
-        
-        <div ng-if="user.loggedIn">
-        	<span>{{user.username}}</span>
-        	<md-button ng-click="user.logout()" href="#!logout" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Logout">
-	          <i class="fas fa-exit" md-colors="{color:'primary'}"></i> <b>logout</b>
-	        </md-button>
-        </div>
-        
-        <div ng-if="!user.loggedIn">
-	        <md-button href="#!login" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Login">
-	          <i class="fas fa-key" md-colors="{color:'primary'}"></i> <b>login</b>
-	        </md-button>
-	        <md-button href="#!register" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Register">
-	          <i class="fas fa-sign-in-alt icon" md-colors="{color:'primary'}"></i> <b>register</b>
-	        </md-button>
-        </div>
-      </div>
-    </md-toolbar>
-    
     <div layout="column" style="height:100%">
 	    <div class="container" style="height:100%">
 	    	<div ng-view style="height:100%"></div>
@@ -118,6 +67,8 @@
     <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
     <script src="bower_components/chart.js/dist/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -142,6 +93,13 @@
         <script src="scripts/controllers/register.js"></script>
         <script src="scripts/directives/compareto.js"></script>
         <script src="scripts/services/user.js"></script>
+        <script src="scripts/controllers/logout.js"></script>
+        <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/create-new-project.js"></script>
+        <script src="scripts/filters/capitalise.js"></script>
+        <script src="scripts/controllers/delete-project.js"></script>
+        <script src="scripts/filters/byteformatter.js"></script>
+        <script src="scripts/filters/replace.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -80,19 +80,20 @@ body {
 	color: white;
 }
 
-.ng-enter {
+
+main-container .ng-enter {
 	transition: all linear 0.5s;
 	opacity: 0;
 }
-.ng-enter-active {
+main-container .ng-enter-active {
 	opacity: 1;
 }
 
-.ng-leave {
+main-container .ng-leave {
 	transition: all linear 0.5s;
 	opacity: 1;
 }
-.ng-leave-active {
+main-container .ng-leave-active {
 	opacity: 0;
 }
 
@@ -116,7 +117,7 @@ body {
 }
 
 .side-filters {
-	min-width: 15%;
+	min-width: 30%;
 	background-color: #e7e7e7;
 }
 
@@ -162,3 +163,63 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	color: orange;
 }
 
+.landing {
+	position: relative;
+    color: white;
+}
+
+.landing-title {
+	text-align: center;
+	font-size: 2em;
+	width: 100%;
+	position: absolute;
+    bottom: 75px;
+}
+
+.login-tools {
+	top: 20px;
+	position: absolute;
+	right: 20px;
+}
+
+.login-tools .md-button {
+	padding: 5px 20px;
+}
+
+.login-tools .md-button b{
+	margin: 10px;
+}
+
+.progress{
+  height: 40px;
+}
+.progress span{
+  transition: all 500ms ease;
+  background: #4A72DA;
+  box-shadow: 1px 2px 3px #999;
+  height: 10px;
+  width: 10px;  
+  display: inline-block;
+  border-radius: 10px;
+  animation: wave 2s ease  infinite;
+}  
+
+.progress span:nth-child(1){  animation-delay: 0; }
+.progress span:nth-child(2){  animation-delay: 100ms; }
+.progress span:nth-child(3){  animation-delay: 200ms; }
+.progress span:nth-child(4){  animation-delay: 300ms; }
+.progress span:nth-child(5){  animation-delay: 400ms; }
+.progress span:nth-child(6){  animation-delay: 500ms; }
+.progress span:nth-child(7){  animation-delay: 600ms; }
+.progress span:nth-child(8){  animation-delay: 700ms; }
+
+@keyframes wave{
+  0%, 40%, 100% { 
+    transform: translate(0, 0);
+    background-color: #4A72DA;    
+  }
+  10% { 
+    transform: translate(0, -15px); 
+    background-color: red;    
+  }  
+}

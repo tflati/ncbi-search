@@ -1,0 +1,17 @@
+<md-toolbar>
+    <div class="md-toolbar-tools sra-toolbar">
+      <a href="#"><i class="fas fa-home"></i></a>
+      
+      <p layout-padding><a href="#!profile">Profile</a></p>
+      
+      <span flex md-truncate></span>
+      
+      <a title="Hi, {{user.username}}" layout="row" layout-align="center center" href="#!profile" style="background-color: green; height: 40px; width: 40px; margin: 10px; border: 5px solid white; border-radius: 25px;">
+      	<b style="font-weight: 900%;">{{user.username | capitalise}}</b>
+      </a>
+	  <md-button href="#!logout" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Logout">
+        <i class="fas fa-exit" md-colors="{color:'primary'}"></i> <b>logout</b>
+      </md-button>
+      
+    </div>
+  </md-toolbar>

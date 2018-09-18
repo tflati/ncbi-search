@@ -1,0 +1,40 @@
+<md-toolbar class="md-hue-2 md-tall" style="font-size: 0.5em;">
+	<div class="md-toolbar-tools sra-toolbar" layout="row" layout-align="start center" style="height: 100%; max-height: 100%;">
+		<i class="fas fa-book fa-2x"></i>
+		
+		<div style="margin-left: 20px;">
+			<div><b>Project ID</b>: <span style="font-size: 15px;">{{project.project_id}}</span></div>
+			<div><b>User</b>: {{project.creator.username}}</div>
+			<div><b>Creation date</b>: <span title="{{project.creation_date.title}}">{{project.creation_date.value}}</span></div>
+		</div>
+		
+		<div style="margin-left: 20px; height: 100%; background-color: #4d82bf; padding: 20px;" layout="column" layout-align="center start">
+			<div layout="row" layout-align="start center">
+				<i class="fas fa-chart-pie fa-2x" style="padding-right: 20px;"></i>
+				<div layout="column" layout-align="center start">
+					<div><b># bioprojects</b>: <b ng-bind="project.no_bioprojects"></b>/<b ng-bind="project.no_bioprojects_all"></b></div>
+					<div><b># experiments</b>: <b ng-bind="project.no_experiments"></b>/<b>{{project.no_experiments_all}}</b></div>
+					<div><b># runs</b>: <b ng-bind="project.no_runs"></b>/<b>{{project.no_runs_all}}</b></div>
+				</div>
+			</div>
+		</div>
+		
+		<div style="margin-left: 20px; height: 100%;" layout="column" layout-align="center start">
+			<div layout="column" layout-align="center start">
+				<div class="far fa-hdd fa-2x"></div>
+				<div><b>Total size</b>: <b>{{project.size | byteFormatter}}</b>/<b>{{project.size_all | byteFormatter}}</b></div>
+			</div>
+		</div>
+		
+		<span flex md-truncate></span>
+		
+		<md-button ng-disabled="!result || save_started" ng-click="save()" title="Save your searches" style="padding: 10px 20px;" layout="row" layout-align="center center" class="md-raised md-accent md-hue-2 toolbar-button" aria-label="Save">
+			<span ng-if="save_started">
+				<i class="fas fa-cog fa-3x fa-spin" md-colors="{color:'accent-700'}"></i>
+			</span>
+       		<i ng-if="save_finished" class="fas fa-save fa-3x" md-colors="{color:'primary-700'}"></i>
+       		<b style="margin-left: 10px;">save</b>
+     	</md-button>
+		
+	</div>
+</md-toolbar>

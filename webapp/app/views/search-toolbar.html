@@ -1,0 +1,43 @@
+<md-toolbar>
+    <div class="md-toolbar-tools sra-toolbar">
+      <a href="#"><i class="fas fa-home"></i></a>
+      
+      <div id="bar_search">
+		<md-input-container>
+	      <label>Database</label>
+	         <md-select ng-model="project.database" style="min-width: 150px;">
+	           <md-option ng-repeat="db in databases" ng-value="db.id">
+	             {{db.name}}
+	           </md-option>
+	         </md-select>
+	    </md-input-container>
+    
+	    <md-input-container>
+	    	<label>Query</label>
+	      	<input ng-keyup="$event.keyCode == 13 && search.search()" title="Search anything (e.g., 'Stress mice', 'Autism mice', etc.)" ng-model="project.search_query_text">
+	    </md-input-container>
+    
+<!-- 		    <md-input-container> -->
+<!-- 		    	<label>Max results</label> -->
+<!-- 		    	<input title="Max results" ng-model="max_results"> -->
+<!-- 		    </md-input-container> -->
+    
+	    <md-button ng-click="search.search()" style="top:-10px;" class="md-raised md-accent md-hue-3"><b style="color: black;">Search</b></md-button>
+	    
+	    <span ng-if="search_started">
+			<i class="fas fa-cog fa-2x fa-spin colored-spin"></i>
+		</span>
+	</div>
+
+	<span flex md-truncate></span>
+      
+	<div ng-if="user.loggedIn">
+		<md-button href="#!profile" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Your projects">
+	    	<i class="fas fa-clipboard-list" md-colors="{color:'primary'}"></i> <b>Your projects</b>
+	  	</md-button>
+		<a title="Hi, {{user.username}}" layout="row" layout-align="center center" href="#!profile" style="background-color: green; height: 40px; width: 40px; margin: 10px; border: 5px solid white; border-radius: 25px; display: inline-grid;">
+			<b style="font-weight: 900%;">{{user.username | capitalise}}</b>
+		</a>
+	</div>
+  </div>
+</md-toolbar>

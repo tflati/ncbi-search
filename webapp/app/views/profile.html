@@ -1,0 +1,52 @@
+<div ng-include="'views/toolbar.html'"></div>
+
+<div>
+
+	<md-button href="#!create-new-project" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Create a new project">
+	  <i class="fas fa-plus" md-colors="{color:'primary'}"></i> <b>Create a new project</b>
+	</md-button>
+	
+	<div ng-if="loaded && projects.length == 0" layout="column" layout-align="center center" style="padding: 30px;">
+		<p style="font-size: 1.2em;">It seems you have no existing projects right now...</p>
+		<img src="images/empty_desk.jpg">
+	</div>
+	
+<!-- 	<div ng-if="projects.length == 0" style="position: relative; text-align: center;"> -->
+<!--  			<p style="max-width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: 500; font-size: 2em;"> -->
+<!-- 				It seems you have no existing projects right now... -->
+<!-- 			</p> -->
+<!-- 		<img width="700px" src="images/blackboard.jpg"> -->
+<!-- 	</div> -->
+	
+	<div ng-if="loaded && projects.length > 0" layout="column" layout-align="center start" style="padding: 50px;">
+		<table cellpadding="5">
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th ng-repeat="(key, value) in projects[0]">{{key | replace:'_':' '}}</th>
+				</tr>
+			</thead>
+			<body>
+				<tr ng-repeat="project in projects track by $index">
+					<td><i class="fas fa-book fa-2x" style="color: #2196f3;"></i></td>
+					<td>
+						<md-button href="#!search/{{project.project_id}}" title="Click here to add data to this project" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Search">
+						  <i class="fas fa-search" md-colors="{color:'primary'}"></i> <b>Add data</b>
+						</md-button>
+					</td>
+					<td>
+						<md-button href="#!delete-project/{{project.project_id}}" title="Click here to delete this project" class="md-raised md-warn md-hue-3 toolbar-button" aria-label="Delete">
+						  <i class="fas fa-trash" md-colors="{color:'warn'}"></i> <b>Delete project</b>
+						</md-button>
+					</td>					
+					<td ng-repeat="f in project">
+						<span ng-if="!f.title">{{f}}</span>
+						<span ng-if="f.title" title="{{f.title}}">{{f.value}}</span>
+					</td>
+				</tr>
+			</body>
+		</table>
+	</div>
+</div>

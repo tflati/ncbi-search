@@ -27,5 +27,10 @@ urlpatterns = [
 #     url(r'^api-auth/', include('rest_framework.urls')),
     url('register/', views.register),
     url('login/', views.login),
-    url('logout/', views.logout)
+    url('logout/', views.logout),
+    url('create_new_project/', views.create_new_project),
+    url('get_projects/(.*)', views.get_projects),
+    url('get_project/(.*)/(.*)', views.get_project),
+    url('delete_project/', views.delete_project),
+    url('save_project/(.*)/(.*)', views.save_project),
 ]

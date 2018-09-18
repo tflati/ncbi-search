@@ -1,9 +1,19 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
+from django.core import serializers
 import json
+import datetime
+import os
+import uuid
+import shutil
+from collections import OrderedDict
 
-from user.models import User
+from xmljson import GData, Element
+from xml.dom import minidom
+from xml.etree.ElementTree import fromstring, tostring
+
+from user.models import User, Project
 from passlib.hash import pbkdf2_sha256
 import uuid
 
@@ -75,15 +85,151 @@ def register(request):
 #         return HttpResponse(json.dumps({"type": "message", "content": "Acceptance of privacy policy is mandatory. Go back to <a href='register' target='_self'>the registration page</a>."}))
     
     try:
-        user = User.objects.get(username=username)
-        return HttpResponse(json.dumps({"type": "message", "content": "This username ('"+username+"') has already been used: please choose another username. Go back to <a href='register' target='_self'>the registration page</a>."}))
+        user = User.objects.get(email=email)
+        return HttpResponse(json.dumps({"type": "error", "content": "There is already a user registered with this email. Please, use another mail address."}))
     except User.DoesNotExist:
-        print("USER DOES NOT EXIST. REGISTERING")
-        hashed_password = pbkdf2_sha256.hash(password)
-        user = User(username=username, hashed_password=hashed_password, email=email, first_name=first_name, last_name=last_name, affiliation=affiliation).save()
-        return HttpResponse(json.dumps({"type": "message", "content": "Registration is complete. User " + username + " correctly added. Go to <a href='login'>the login page to enter the system</a>."}))
+        print("MAIL CHECK SUCCESSFUL DOES NOT EXIST.")
+        
+        try:
+            user = User.objects.get(username=username)
+            return HttpResponse(json.dumps({"type": "error", "content": "There is already a user registered with this username. Please choose another username."}))
+        except User.DoesNotExist:
+            print("USERNAME CHECK SUCCESSFUL DOES NOT EXIST.")
+            print("REGISTERING")            
+            hashed_password = pbkdf2_sha256.hash(password)
+            user = User(username=username, hashed_password=hashed_password, email=email, first_name=first_name, last_name=last_name, affiliation=affiliation).save()
+            return HttpResponse(json.dumps({"type": "message", "content": "Registration is complete. User " + username + " correctly added."}))
     
+def get_projects(request, username):
     
+    u = User.objects.get(username=username)
+    projects = u.project_set.all()
+    return HttpResponse(serializers.serialize("json", projects, use_natural_foreign_keys=True))
+
+def get_project(request, username, project_id):
+    u = User.objects.get(username=username)
+    p = Project.objects.get(project_id=project_id, creator=u)
+
+    result = {
+        "project": json.loads(serializers.serialize("json", [p], use_natural_foreign_keys=True)),
+    }
     
+    filepath = p.base_path + "dataset.xml"
+    if os.path.exists(filepath):
+        bf = GData(dict_type=OrderedDict)
+        data_object = fromstring(open(filepath, "r").read())
+        dataset = bf.data(data_object)
+        result["dataset"] = dataset
+    
+    filepath = p.base_path + "filters.json"
+    if os.path.exists(filepath):
+        with open(filepath, "r") as f:
+            result["filters"] = json.load(f)
+    
+    return HttpResponse(json.dumps(result))
+    
+def create_new_project(request):
+    
+    data = json.loads(request.body.decode("utf-8"))
+    username = data["username"]
+    title = data["title"]
+    
+    u = User.objects.get(username=username)
+    
+    project_id = uuid.uuid4()
+    
+    base_path = os.path.dirname(__file__) + "/projects/" + username + "/" + title + "/"
+    if not os.path.exists(base_path):
+        os.makedirs(base_path)
+    
+    try:
+        p = Project.objects.get(title = title, creator=u)
+        result = {"type": "error", "content": "A project with title \"" + title + "\" already exists for user " + username}
+    except Project.DoesNotExist:
+        print("Request project does not exist. Creating one.")
+        p = Project(project_id=project_id, title=title, base_path=base_path, creator=u)
+        p.save()
+        result = {"type": "message", "content": "Correctly created new project with title: " + title + " for user " + username}
+    
+    return HttpResponse(json.dumps(result))
+
+def save_project(request, username, project_id):
+    
+    data = json.loads(request.body.decode("utf-8"))
+    
+    project = data["project"]
+    selection = data["selection"]
+    filters = data["filters"]
+    
+    experiments = []
+    exp_tree = {"EXPERIMENT_PACKAGE": experiments}
+#     final_dataset_to_save = {"EXPERIMENT_PACKAGE_SET": experiments}
+    for p in selection:
+        for experiment in p["experiments"]:
+            experiments.append(experiment)
+    print(len(experiments), "total experiments")
+    
+    u = User.objects.get(username=username)
+    p = Project.objects.get(project_id=project_id, creator=u)
+    
+    p.no_bioprojects = project["no_bioprojects"]
+    p.no_bioprojects_all = project["no_bioprojects_all"]
+    p.no_experiments = project["no_experiments"]
+    p.no_experiments_all = project["no_experiments_all"]
+    p.no_runs = project["no_runs"]
+    p.no_runs_all = project["no_runs_all"]
+    p.size = project["size"]
+    p.size_all = project["size_all"]
+    p.save()
+    
+    title = p.title
+    
+    bf = GData(dict_type=OrderedDict)
+    #xml_data = bf.etree(data={'p': {'@id': 'main', '$': 'Hello', 'b': 'bold'}}, root=Element('root'))
+    xml_data = bf.etree(data=exp_tree, root=Element("EXPERIMENT_PACKAGE_SET"))
+    print("Created xml_data")
+    #print(xml_data)
+    #print(tostring(xml_data))
+    
+#     print("Creating GData")
+#     xml_data = gd.etree(data=data)
+    with open(p.base_path + "dataset.xml", "w") as f:
+        s = tostring(xml_data)
+        m = minidom.parseString(s)
+        x = m.toprettyxml(indent="   ")
+        f.write(x)
+    
+    with open(p.base_path + "filters.json", "w") as f:
+       json.dump(filters, f, indent = 4) 
+    
+    print("Written results to file")
+    
+    result = {"type": "message", "content": "Correctly saved project with id: " + project_id + " for user " + username}
+    
+    return HttpResponse(json.dumps(result))
+
+def delete_project(request):
+    
+    data = json.loads(request.body.decode("utf-8"))
+    username = data["username"]
+    project_id = data["project_id"]
+    
+    try:
+        u = User.objects.get(username=username)
+        p = Project.objects.get(project_id = project_id)
+        print(str(p), p.title)
+        
+        base_path = os.path.dirname(__file__) + "/projects/" + username + "/" + p.title + "/"
+        shutil.rmtree(base_path, ignore_errors=True)
+    
+        p.delete()
+        result = {"type": "message", "content": "A project with title \"" + p.title + "\" (project_id=\""+project_id+"\") has been correctly removed"}
+    except Project.DoesNotExist as e:
+        result = {"type": "error", "content": "Error during the deletion of project " + project_id + ": project not existing (" + str(e) + ")"}
+    except Exception as e:
+        print("Exception", e)
+        result = {"type": "error", "content": "Error during the deletion of project " + project_id + ": " + str(e)}
+    
+    return HttpResponse(json.dumps(result))
     
     

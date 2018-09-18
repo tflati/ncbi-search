@@ -8,7 +8,7 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('LoginCtrl', function ($scope, $http, toaster, userService, $location) {
+  .controller('LoginCtrl', function ($scope, $http, $window, toaster, userService, $location, $timeout) {
 	  
 	  $scope.userService = userService;
 	  
@@ -23,7 +23,9 @@ angular.module('sraSearchApp')
 	  		.then(function(response){
 					console.log(response, response.header);
 					userService.login();
-					$location.path("/");
+					
+					$window.scrollTo(0, 0);
+					$timeout(function(){$location.path("/profile");}, 3000);
 	  		})
 	  		.catch(function(response){
 				toaster.pop({

@@ -8,10 +8,6 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, userService) {
+	  $scope.user = userService;
   });

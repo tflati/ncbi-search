@@ -1,0 +1,21 @@
+<div ng-include="'views/toolbar.html'"></div>
+
+<div layout-padding>
+	
+	<md-button href="#!profile" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Go back to your profile">
+	  <i class="fas fa-arrow-left" md-colors="{color:'primary'}"></i> <b>Back</b>
+	</md-button>
+
+	<form name="form" layout="column" layout-align="start start" layout-padding style="background: white; padding: 50px;">
+		<h3>Delete project</h3>
+		
+		<div layout-padding>
+		    <p>Are you sure you want to delete the following project?</p>
+		    <p><b>Project ID</b>: {{projectId}}</p>
+		</div>
+		
+		<md-button ng-click="send()" title="Click here to delete this project" class="md-raised md-warn md-hue-3 toolbar-button" aria-label="Delete">
+		  <i class="fas fa-trash" md-colors="{color:'warn'}"></i> <b>Yes, I confirm I want to delete this project</b>
+		</md-button>
+	</form>
+</div>

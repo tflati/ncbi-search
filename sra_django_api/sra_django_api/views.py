@@ -88,5 +88,3 @@ def search(request, parameters):
     print("Result loaded. Converting to json and returning")
     
     return HttpResponse(json.dumps(result))
-
-

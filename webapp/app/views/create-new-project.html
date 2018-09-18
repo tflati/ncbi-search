@@ -1,0 +1,23 @@
+<div ng-include="'views/toolbar.html'"></div>
+
+<div layout-padding>
+
+	<form name="form" layout="column" layout-align="start start" layout-padding style="background: white; padding: 50px;">
+		<h3>Create a new project</h3>
+		
+		<div layout-padding>
+		    <ng-md-icon icon="mode_edit"></ng-md-icon>
+			<md-input-container>
+			    <input name="title" ng-model="project.title" type="input" placeholder="Title (required)" required maxlength="100">
+			    <div ng-messages="form.email.$error" role="alert">
+		          <div ng-message-exp="['required', 'maxlength']">
+		            Your email must be less than 100 characters.
+		          </div>
+		        </div>
+			  </md-input-container>
+		</div>
+		<md-button ng-click="send()" type="submit" class="md-raised md-accent md-hue-3" aria-label="Create">
+	       <i class="fas fa-plus icon" md-colors="{color:'primary'}"></i> <b>create</b>
+	     </md-button>
+	</form>
+</div>

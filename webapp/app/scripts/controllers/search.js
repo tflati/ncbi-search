@@ -7,15 +7,175 @@
  * # SearchctrlCtrl
  * Controller of the sraSearchApp
  */
-angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http, Utils, toaster, $filter, $mdDialog, userService) {
+angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $routeParams, $http, Utils, toaster, $filter, $mdDialog, userService) {
 	
-	$scope.database = "sra";
-	$scope.search_query_text = "PRJNA398031"; //"PRJNA462667", "PRJNA398031" (multispecies)
-	$scope.max_results = 100000;
+	$scope.projectId = $routeParams.projectId;
 	$scope.Utils = Utils;
 	$scope.user = userService;
-	$scope.filter = $filter('expFilterApplier');
+	
+	$scope.project = undefined;
+	
+	$scope.filters = [];
+	
+	$scope.result = undefined;
     
+	$scope.search_started = false;
+    $scope.search_finished = false;
+    $scope.save_started = false;
+    $scope.save_finished = true;
+    
+    $scope.sortType = "id";
+    $scope.sortReverse = false;
+	
+	var project_api = "http://localhost/sra_django_api/user/get_project/" + $scope.user.username + "/" + $scope.projectId;
+    console.log("PROFILE", project_api, $scope.user);
+    
+	  $http.get(project_api)
+		.then(function(response){
+				$scope.loaded = true;
+				console.log(response, response.header);
+
+				$scope.project = response.data.project[0].fields;
+				
+				if(response.data.dataset){
+					$scope.parse_result(response.data.dataset);
+					
+					if(response.data.filters)
+						$scope.update_filters_settings(response.data.filters);
+					
+					$scope.update_charts();
+					$scope.update_stats();
+				}
+				
+				$scope.project.creation_date = {
+						value: moment($scope.project.creation_date).fromNow(),
+						title: "Exact date: " + $scope.project.creation_date
+				};
+				
+				if($scope.project.database == undefined){
+					$scope.project.database = "sra";
+					$scope.project.search_query_text = "PRJNA398031"; //"PRJNA462667", "PRJNA398031" (multispecies)
+					$scope.project.max_results = 100000;
+				}
+				
+				console.log("SEARCH", $scope.project);
+		})
+		.catch(function(response){
+			toaster.pop({
+		            type: "error",
+		            title: "Server error",
+		            body: "There was an error during project retrieval. Please, try again.",
+		            timeout: 3000
+		        });
+			console.log("ERROR", response);
+		})
+		.finally(function(){
+		});
+	  
+  $scope.parse_result = function(dataset){
+	  
+	  $scope.result = [];
+		for(var i=0; i<dataset.EXPERIMENT_PACKAGE_SET.EXPERIMENT_PACKAGE.length; i++){
+			var experiment = dataset.EXPERIMENT_PACKAGE_SET.EXPERIMENT_PACKAGE[i];
+			var links = experiment.STUDY.IDENTIFIERS.EXTERNAL_ID;
+			if(!angular.isArray(links)) links = [links];
+			for (var l=0; l<links.length; l++){
+				var link = links[l];
+				if(link.namespace == "BioProject"){
+					var bioproject_id = link["$t"]
+					
+					var bioproject = $scope.result.filter(o => {return o.id === bioproject_id});
+					if (bioproject.length == 0) {
+						var bioprojectObject = {id: bioproject_id, experiments: []};
+						$scope.result.push(bioprojectObject);
+						bioproject = [bioprojectObject];
+					}
+					
+					bioproject[0].experiments.push(experiment);
+				}
+			}
+			if(experiment.STUDY.STUDY_LINKS != undefined && experiment.STUDY.STUDY_LINKS.STUDY_LINK.XREF_LINK != undefined)
+				if(experiment.STUDY.STUDY_LINKS.STUDY_LINK.XREF_LINK.DB["$t"] == "pubmed")
+					bioproject[0].paper_id = experiment.STUDY.STUDY_LINKS.STUDY_LINK.XREF_LINK.ID["$t"];
+		}
+		
+		console.log("RESULT", $scope.result);
+		
+		$scope.make_filters();
+  };
+	  
+  this.search = function(){
+    	
+    	$scope.search_started = true;
+    	$scope.search_finished = false;
+    	$scope.filters = [];
+    	
+    	var parameters = [];
+    	parameters.push("db="+$scope.project.database);
+    	parameters.push("query="+$scope.project.search_query_text);
+    	parameters.push("max_hits="+$scope.project.max_results);
+    	
+    	var search_api = "http://localhost/sra_django_api/search/" + parameters.join("&");
+        console.log("SEARCH", search_api);
+        
+    	$http.get(search_api)
+    		.then(function(response){
+				console.log(response);
+				
+				$scope.parse_result(response.data);
+				$scope.update_charts();
+				$scope.update_stats();
+			})
+			.catch(function(response){
+				if (response.status == "-1")
+					toaster.pop({
+			            type: "error",
+			            title: "Server error",
+			            body: "There was an error during result fetching. Please, try again.",
+			            timeout: 3000
+			        });
+				console.log("ERROR", response);
+			})
+			.finally(function(){
+				$scope.search_started = false;
+				$scope.search_finished = true;
+			});
+    };
+	  
+	  
+    $scope.save = function(){
+    	var save_api = "http://localhost/sra_django_api/user/save_project/" + $scope.user.username + "/" + $scope.projectId;
+    	var args = {project: $scope.project, selection: $scope.result, filters: $scope.filters};
+        console.log("SAVE", save_api, $scope.user, args);
+        
+        $scope.save_started = true;
+        $scope.save_finished = false;
+    	$http.post(save_api, args)
+//        $http.post(save_api, {})
+    		.then(function(response){
+    				console.log("SAVING", response);
+    				toaster.pop({
+			            type: response.data.type,
+			            title: "Server " + response.data.type,
+			            body: response.data.content,
+			            timeout: 3000
+			        });
+    		})
+    		.catch(function(response){
+    			toaster.pop({
+    		            type: "error",
+    		            title: "Server error",
+    		            body: "There was an error during project retrieval. Please, try again.",
+    		            timeout: 3000
+    		        });
+    			console.log("ERROR", response);
+    		})
+    		.finally(function(){
+    			$scope.save_started = false;
+    			$scope.save_finished = true;
+    		});
+    };
+	  
 	$scope.update_charts = function(){
 
 		// For each filter category
@@ -24,7 +184,7 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
 	    	angular.forEach($scope.result, function(bioproject){
 	    		filtered = filtered.concat($scope.get_experiments(bioproject));
 	    	});
-	    	var filtered = $scope.filter(filtered, $scope.filters);
+	    	var filtered = $filter('expFilterApplier')(filtered, $scope.filters);
 	    	
 	    	// For each filter value
 	    	var counter = {};
@@ -250,12 +410,7 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
 		}
 	];
     
-    $scope.result = undefined;
-    $scope.search_started = false;
-    $scope.search_finished = false;
-    $scope.filters = [];
-    $scope.sortType = "id";
-    $scope.sortReverse = false;
+    
     
     $scope.sortTable = function(x){
     	if ($scope.sortType == x) $scope.sortReverse = !$scope.sortReverse;
@@ -274,12 +429,31 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
     	return row.id;
     };
     
+    $scope.update_filters_settings = function(saved_filters){
+    	
+    	var dictionary = {};
+    	angular.forEach(saved_filters, function(filterGroup){
+    		angular.forEach(filterGroup.values, function(filter){
+    			dictionary[filterGroup.type + "#" + filter.value] = filter;
+    		});
+    	});
+    	
+    	angular.forEach($scope.filters, function(filterGroup){
+    		angular.forEach(filterGroup.values, function(f){
+    			var saved_filter = dictionary[filterGroup.type + "#" + f.value];
+    			angular.forEach(f, function(value, key){
+    				if(key != "eval")
+    					f[key] = saved_filter[key];
+    			});
+    		});
+    	});
+    };
+    
     $scope.add_filter = function(x, type, filterFunction, label){
     	
     	if(label == undefined)
     		label = type;
     	
-    	// Organism filter
 		var group = $scope.filters.filter(o => {return o.type === type});
 		if (group.length == 0) {
 			var groupObject = {label: label, selected: true, type: type, values: []};
@@ -351,6 +525,7 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
 	    	}
     	}
     	
+    	$scope.update_stats();
 //    	console.log("CREATED FILTERS", $scope.filters);
     };
     
@@ -375,7 +550,7 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
     	angular.forEach($scope.result, function(bioproject){
     		filtered = filtered.concat($scope.get_experiments(bioproject));
     	});
-    	var filtered = $scope.filter(filtered, $scope.filters);
+    	var filtered = $filter('expFilterApplier')(filtered, $scope.filters);
 //    	console.log("|FILTERED|", filtered.length);
     	
     	// For each filter category
@@ -396,6 +571,33 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
     	});
     };
     
+    $scope.update_stats = function(){
+    	var all_experiments = $filter('concat')($filter('apply')($scope.result, $scope.get_experiments));
+    	var all_runs = $filter('concat')($filter('apply')(all_experiments, $scope.get_runs));
+		
+    	$scope.project.no_bioprojects_all = $scope.result.length;
+    	$scope.project.no_bioprojects = $filter('length')($filter('filterApplier')($scope.result, $scope.filters));
+    	
+    	$scope.project.no_experiments_all = all_experiments.length;
+    	// result | apply:get_experiments | concat | expFilterApplier:filters | length
+    	var filtered_experiments = $filter('expFilterApplier')(all_experiments, $scope.filters);
+    	$scope.project.no_experiments = $filter('length')(filtered_experiments);
+    	
+    	$scope.project.no_runs_all = all_runs.length;
+    	// result | apply:get_experiments | concat | expFilterApplier:filters | apply:get_runs | lengths | sum
+    	var filtered_runs = $filter('concat')($filter('apply')(filtered_experiments, $scope.get_runs))
+    	$scope.project.no_runs = $filter('length')(filtered_runs);
+    	
+    	$scope.project.size_all = $filter('sum')($filter('apply')(all_runs, $scope.get_size));
+    	$scope.project.size = $filter('sum')($filter('apply')(filtered_runs, $scope.get_size));
+    	console.log("UPDATE STATS", $scope.project.size, $scope.project.size_all);
+    };
+    
+    
+    
+    
+    
+
     $scope.get_runs = function(x){return angular.isArray(x.RUN_SET.RUN) ? x.RUN_SET.RUN : [x.RUN_SET.RUN];};
     $scope.get_paper = function(x){if(x.STUDY.STUDY_LINKS != undefined &&
 	    				x.STUDY.STUDY_LINKS.STUDY_LINK != undefined &&
@@ -407,6 +609,7 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
     $scope.get_library_source = function(x){return x.EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SOURCE["$t"];};
     $scope.get_platform = function(x){return x.EXPERIMENT.PLATFORM[Object.keys(x.EXPERIMENT.PLATFORM)[0]].INSTRUMENT_MODEL["$t"];};
     $scope.get_organism = function(x){return x.SAMPLE.SAMPLE_NAME.SCIENTIFIC_NAME["$t"];};
+    $scope.get_size = function(x){return x.size;};
     $scope.get_experiments = function(x){return x.experiments;};
     $scope.get_attribute = function(x, type){
     	if(! x.SAMPLE.SAMPLE_ATTRIBUTES ) return undefined;
@@ -424,69 +627,8 @@ angular.module('sraSearchApp').controller('SearchCtrl', function ($scope, $http,
     	console.log("CLICKED FILTER", f, filter, f.selected);
     	$scope.update_filters(f.selected);
 //    	$scope.update_charts();
+    	$scope.update_stats();
     };
     
-    this.search = function(){
-    	
-    	$scope.search_started = true;
-    	$scope.search_finished = false;
-    	$scope.filters = [];
-    	
-    	var parameters = [];
-    	parameters.push("db="+$scope.database);
-    	parameters.push("query="+$scope.search_query_text);
-    	parameters.push("max_hits="+$scope.max_results);
-    	
-    	var search_api = "http://localhost/sra_django_api/search/" + parameters.join("&");
-        console.log("SEARCH", search_api);
-        
-    	$http.get(search_api)
-    		.then(function(response){
-				console.log(response);
-				
-				$scope.result = [];
-				for(var i=0; i<response.data.EXPERIMENT_PACKAGE_SET.EXPERIMENT_PACKAGE.length; i++){
-					var experiment = response.data.EXPERIMENT_PACKAGE_SET.EXPERIMENT_PACKAGE[i];
-					var links = experiment.STUDY.IDENTIFIERS.EXTERNAL_ID;
-					if(!angular.isArray(links)) links = [links];
-					for (var l=0; l<links.length; l++){
-						var link = links[l];
-						if(link.namespace == "BioProject"){
-							var bioproject_id = link["$t"]
-							
-							var bioproject = $scope.result.filter(o => {return o.id === bioproject_id});
-							if (bioproject.length == 0) {
-								var bioprojectObject = {id: bioproject_id, experiments: []};
-								$scope.result.push(bioprojectObject);
-								bioproject = [bioprojectObject];
-							}
-							
-							bioproject[0].experiments.push(experiment);
-						}
-					}
-					if(experiment.STUDY.STUDY_LINKS != undefined && experiment.STUDY.STUDY_LINKS.STUDY_LINK.XREF_LINK != undefined)
-						if(experiment.STUDY.STUDY_LINKS.STUDY_LINK.XREF_LINK.DB["$t"] == "pubmed")
-							bioproject[0].paper_id = experiment.STUDY.STUDY_LINKS.STUDY_LINK.XREF_LINK.ID["$t"];
-				}
-				
-				console.log("RESULT", $scope.result);
-				
-				$scope.make_filters();
-				$scope.update_charts();
-			})
-			.catch(function(response){
-				if (response.status == "-1")
-					toaster.pop({
-			            type: "error",
-			            title: "Server error",
-			            body: "There was an error during result fetching. Please, try again.",
-			            timeout: 3000
-			        });
-				console.log("ERROR", response);
-			})
-			.finally(function(){
-				$scope.search_started = false;
-				$scope.search_finished = true;
-			});
-    };
+    
   });

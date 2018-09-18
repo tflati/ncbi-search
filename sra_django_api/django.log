@@ -1,0 +1,43 @@
+[18/Sep/2018 10:03:04] "OPTIONS /user/save_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 200 0
+[18/Sep/2018 10:03:18] "POST /user/save_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 200 120
+[18/Sep/2018 10:08:21] "GET /user/get_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 200 536
+[18/Sep/2018 10:11:26] "GET /user/get_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 200 536
+[18/Sep/2018 10:12:16] "GET /user/get_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 200 536
+[18/Sep/2018 10:12:21] "GET /user/get_projects/Tiziano HTTP/1.1" 200 536
+[18/Sep/2018 10:12:24] "OPTIONS /user/create_new_project/ HTTP/1.1" 200 0
+[18/Sep/2018 10:12:24] "POST /user/create_new_project/ HTTP/1.1" 200 105
+[18/Sep/2018 10:12:28] "POST /user/create_new_project/ HTTP/1.1" 200 110
+[18/Sep/2018 10:12:28] "GET /user/get_projects/Tiziano HTTP/1.1" 200 1042
+[18/Sep/2018 10:12:33] "GET /user/get_project/Tiziano/584a58e1-6c18-452f-af78-dcd65869ea8d HTTP/1.1" 200 506
+[18/Sep/2018 10:12:39] "GET /user/get_projects/Tiziano HTTP/1.1" 200 1042
+[18/Sep/2018 10:12:40] "GET /user/get_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 200 536
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 18, 2018 - 10:03:01
+Django version 2.0.3, using settings 'sra_django_api.settings'
+Starting development server at http://127.0.0.1:7600/
+Quit the server with CONTROL-C.
+341 total experiments
+Created xml_data
+Written results to file
+Request project does not exist. Creating one.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 18, 2018 - 10:13:56
+Django version 2.0.3, using settings 'sra_django_api.settings'
+Starting development server at http://127.0.0.1:7600/
+Quit the server with CONTROL-C.
+Internal Server Error: /user/get_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/flati/workspace/SRAsearch/sra_django_api/user/views.py", line 108, in get_project
+    data_object = fromstring(open(p.base_path + "dataset.xml", "r").read())
+NameError: name 'fromstring' is not defined
+[18/Sep/2018 10:15:48] "GET /user/get_project/Tiziano/f3ed1c53-e185-4a65-87c4-482a681646a9 HTTP/1.1" 500 72797

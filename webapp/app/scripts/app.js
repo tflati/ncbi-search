@@ -21,7 +21,8 @@ angular
     'ngMdIcons',
     'bw.paging',
     'toaster',
-    'chart.js'
+    'chart.js',
+    'angularMoment'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -39,6 +40,31 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
         controllerAs: 'register'
+      })
+      .when('/logout', {
+        templateUrl: 'views/logout.html',
+        controller: 'LogoutCtrl',
+        controllerAs: 'logout'
+      })
+      .when('/search/:projectId', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+      })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl',
+        controllerAs: 'profile'
+      })
+      .when('/create-new-project', {
+        templateUrl: 'views/create-new-project.html',
+        controller: 'CreateNewProjectCtrl',
+        controllerAs: 'createNewProject'
+      })
+      .when('/delete-project/:projectId', {
+        templateUrl: 'views/delete-project.html',
+        controller: 'DeleteProjectCtrl',
+        controllerAs: 'deleteProject'
       })
       .otherwise({
         redirectTo: '/'
