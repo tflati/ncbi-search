@@ -8,12 +8,12 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('ProfileCtrl', function ($scope, userService, $http, $location, toaster, moment) {
+  .controller('ProfileCtrl', function ($scope, userService, $http, $location, toaster, moment, Utils) {
 	  
 	  $scope.user = userService;
 	  $scope.projects = [];
 	  
-	  var profile_api = "http://localhost/sra_django_api/user/get_projects/" + $scope.user.username;
+	  var profile_api = Utils.REST_API + "user/get_projects/" + $scope.user.username;
       console.log("PROFILE", profile_api, $scope.user);
       
 	  $http.get(profile_api)

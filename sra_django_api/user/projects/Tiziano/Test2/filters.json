@@ -1,0 +1,3730 @@
+[
+    {
+        "labels": [
+            "454 GS FLX Titanium",
+            "AB 5500xl Genetic Analyzer",
+            "AB SOLiD System 3.0",
+            "Illumina Genome Analyzer IIx",
+            "Illumina HiSeq 2000",
+            "Illumina HiSeq 2500",
+            "Illumina HiSeq 4000",
+            "Illumina MiSeq",
+            "NextSeq 500"
+        ],
+        "type": "PLATFORM",
+        "label": "PLATFORM",
+        "selected": true,
+        "data": [
+            13,
+            6,
+            4,
+            24,
+            362,
+            67,
+            2,
+            166,
+            60
+        ],
+        "values": [
+            {
+                "value": "Illumina HiSeq 2500",
+                "selected": true,
+                "count": 67
+            },
+            {
+                "value": "Illumina MiSeq",
+                "selected": true,
+                "count": 166
+            },
+            {
+                "value": "Illumina HiSeq 2000",
+                "selected": true,
+                "count": 362
+            },
+            {
+                "value": "NextSeq 500",
+                "selected": true,
+                "count": 60
+            },
+            {
+                "value": "Illumina HiSeq 4000",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "AB 5500xl Genetic Analyzer",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Illumina Genome Analyzer IIx",
+                "selected": true,
+                "count": 24
+            },
+            {
+                "value": "454 GS FLX Titanium",
+                "selected": true,
+                "count": 13
+            },
+            {
+                "value": "AB SOLiD System 3.0",
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "PAIRED",
+            "SINGLE"
+        ],
+        "type": "LIBRARY LAYOUT",
+        "label": "LIBRARY LAYOUT",
+        "selected": true,
+        "data": [
+            210,
+            494
+        ],
+        "values": [
+            {
+                "value": "SINGLE",
+                "selected": true,
+                "count": 494
+            },
+            {
+                "value": "PAIRED",
+                "selected": true,
+                "count": 210
+            }
+        ]
+    },
+    {
+        "labels": [
+            "GENOMIC",
+            "TRANSCRIPTOMIC"
+        ],
+        "type": "LIBRARY SOURCE",
+        "label": "LIBRARY SOURCE",
+        "selected": true,
+        "data": [
+            25,
+            679
+        ],
+        "values": [
+            {
+                "value": "TRANSCRIPTOMIC",
+                "selected": true,
+                "count": 679
+            },
+            {
+                "value": "GENOMIC",
+                "selected": true,
+                "count": 25
+            }
+        ]
+    },
+    {
+        "labels": [
+            "WITH PAPER",
+            "WITHOUT PAPER"
+        ],
+        "type": "PUBLICATION",
+        "label": "PUBLICATION",
+        "selected": true,
+        "data": [
+            244,
+            460
+        ],
+        "values": [
+            {
+                "value": "WITHOUT PAPER",
+                "selected": true,
+                "count": 460
+            },
+            {
+                "value": "WITH PAPER",
+                "selected": true,
+                "count": 244
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Clostridioides difficile",
+            "Coilia nasus",
+            "Corynebacterium pseudotuberculosis",
+            "Coturnix japonica",
+            "Danio rerio",
+            "Gasterosteus aculeatus",
+            "Homo sapiens",
+            "Hypomesus transpacificus",
+            "Macrobrachium nipponense",
+            "Mus musculus",
+            "Notothenia coriiceps",
+            "Oncorhynchus mykiss",
+            "Peromyscus californicus",
+            "Rattus norvegicus",
+            "Saccharomyces cerevisiae",
+            "Sparus aurata",
+            "Spodoptera frugiperda",
+            "Streptococcus mutans UA159"
+        ],
+        "type": "ORGANISM",
+        "label": "ORGANISM",
+        "selected": true,
+        "data": [
+            16,
+            2,
+            4,
+            24,
+            2,
+            12,
+            11,
+            12,
+            12,
+            401,
+            9,
+            1,
+            8,
+            11,
+            158,
+            3,
+            8,
+            10
+        ],
+        "values": [
+            {
+                "value": "Mus musculus",
+                "selected": true,
+                "count": 401
+            },
+            {
+                "value": "Saccharomyces cerevisiae",
+                "selected": true,
+                "count": 158
+            },
+            {
+                "value": "Danio rerio",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "Macrobrachium nipponense",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Streptococcus mutans UA159",
+                "selected": true,
+                "count": 10
+            },
+            {
+                "value": "Coilia nasus",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "Rattus norvegicus",
+                "selected": true,
+                "count": 11
+            },
+            {
+                "value": "Peromyscus californicus",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "Gasterosteus aculeatus",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Coturnix japonica",
+                "selected": true,
+                "count": 24
+            },
+            {
+                "value": "Spodoptera frugiperda",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "Hypomesus transpacificus",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Sparus aurata",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Corynebacterium pseudotuberculosis",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "Homo sapiens",
+                "selected": true,
+                "count": 11
+            },
+            {
+                "value": "Notothenia coriiceps",
+                "selected": true,
+                "count": 9
+            },
+            {
+                "value": "Clostridioides difficile",
+                "selected": true,
+                "count": 16
+            },
+            {
+                "value": "Oncorhynchus mykiss",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "196_Brain heart infusion broth",
+            "196_Brain heart infusion broth+1.5 % NaCl",
+            "32g58_Brain heart infusion broth",
+            "32g58_Brain heart infusion broth+1.5 % NaCl",
+            "630_Brain heart infusion broth",
+            "630_Brain heart infusion broth+1.5 % NaCl",
+            "Brain",
+            "Brain tissue, Dnmt3a2lox/2lox, CRE, female, stress",
+            "Brain tissue, Dnmt3a2lox/2lox, CRE, male, stress",
+            "Brain tissue, Dnmt3a2lox/2lox, GFP, female, stress",
+            "Brain tissue, Dnmt3a2lox/2lox, GFP, male, stress",
+            "Brain tissue, WT, female, control",
+            "Brain tissue, WT, female, stress",
+            "Brain tissue, WT, male, control",
+            "Brain tissue, WT, male, stress",
+            "FACs sorted ILC2",
+            "FACs sorted ILC2 at 1DPI",
+            "Nucleus Accumbens (Nac)",
+            "R20291_Brain heart infusion broth",
+            "R20291_Brain heart infusion broth+1.5 % NaCl",
+            "Streptococcus mutans UA159 wild type",
+            "Streptococcus mutans \u2206spxA1 mutant",
+            "Streptococcus mutans \u2206spxA1/\u2206spxA2 mutant",
+            "Streptococcus mutans \u2206spxA2 mutant",
+            "TET1 loxp/loxp mice",
+            "Ventral tegmental area (brain)",
+            "adult amygdala",
+            "adult nucleus accumbens",
+            "adult nucleus accumbens, SNI",
+            "adult nucleus accumbens, sham",
+            "adult prefrontal cortex",
+            "adult ventral hippocampus",
+            "bed nucleus of the stria terminalis",
+            "medial prefrontal cortex",
+            "microglia dissected from mouse brain tissues",
+            "periaqueductal grey, SNI",
+            "periaqueductal grey, sham",
+            "prefrontal cortex (PFC)",
+            "prefrontal cortex, SNI",
+            "prefrontal cortex, sham",
+            "ventral hippocampus"
+        ],
+        "type": "source_name",
+        "label": "SAMPLE ATTRIBUTE: source_name",
+        "selected": true,
+        "data": [
+            373,
+            373,
+            373,
+            373,
+            373,
+            373,
+            375,
+            374,
+            374,
+            374,
+            374,
+            374,
+            374,
+            374,
+            374,
+            374,
+            374,
+            391,
+            373,
+            373,
+            375,
+            373,
+            373,
+            373,
+            385,
+            407,
+            384,
+            383,
+            377,
+            377,
+            383,
+            383,
+            399,
+            403,
+            383,
+            377,
+            377,
+            390,
+            377,
+            377,
+            398
+        ],
+        "values": [
+            {
+                "value": "Brain",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "ventral hippocampus",
+                "selected": true,
+                "count": 27
+            },
+            {
+                "value": "bed nucleus of the stria terminalis",
+                "selected": true,
+                "count": 28
+            },
+            {
+                "value": "medial prefrontal cortex",
+                "selected": true,
+                "count": 32
+            },
+            {
+                "value": "Nucleus Accumbens (Nac)",
+                "selected": true,
+                "count": 20
+            },
+            {
+                "value": "prefrontal cortex (PFC)",
+                "selected": true,
+                "count": 19
+            },
+            {
+                "value": "Streptococcus mutans \u2206spxA1/\u2206spxA2 mutant",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "Streptococcus mutans \u2206spxA2 mutant",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "Streptococcus mutans \u2206spxA1 mutant",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "Streptococcus mutans UA159 wild type",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "periaqueductal grey, SNI",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "periaqueductal grey, sham",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "prefrontal cortex, SNI",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "prefrontal cortex, sham",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "adult nucleus accumbens, SNI",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "adult nucleus accumbens, sham",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "FACs sorted ILC2 at 1DPI",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "FACs sorted ILC2",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "microglia dissected from mouse brain tissues",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Ventral tegmental area (brain)",
+                "selected": true,
+                "count": 36
+            },
+            {
+                "value": "Brain tissue, WT, male, stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, WT, female, stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, WT, male, control",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, WT, female, control",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, Dnmt3a2lox/2lox, GFP, male, stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, Dnmt3a2lox/2lox, GFP, female, stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, Dnmt3a2lox/2lox, CRE, male, stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Brain tissue, Dnmt3a2lox/2lox, CRE, female, stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "TET1 loxp/loxp mice",
+                "selected": true,
+                "count": 14
+            },
+            {
+                "value": "adult ventral hippocampus",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "adult prefrontal cortex",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "adult nucleus accumbens",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "adult amygdala",
+                "selected": true,
+                "count": 13
+            },
+            {
+                "value": "32g58_Brain heart infusion broth+1.5 % NaCl",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "32g58_Brain heart infusion broth",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "R20291_Brain heart infusion broth+1.5 % NaCl",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "R20291_Brain heart infusion broth",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "196_Brain heart infusion broth+1.5 % NaCl",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "196_Brain heart infusion broth",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "630_Brain heart infusion broth+1.5 % NaCl",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "630_Brain heart infusion broth",
+                "selected": true,
+                "count": 2
+            }
+        ]
+    },
+    {
+        "labels": [
+            "1002",
+            "196",
+            "32g58",
+            "630",
+            "AB",
+            "BY4741",
+            "C57BL/6",
+            "C57BL/6Crl",
+            "C57BL/6J",
+            "C57BL/6NCrl",
+            "DBA/2Crl",
+            "DBA2/J",
+            "NA",
+            "R20291",
+            "Sprague-Dawley",
+            "Teleostei; Clupei; Clupeiformes; Clupeoidei; Engraulidae; Coilinae; Coilia",
+            "Wistar Kyoto",
+            "not applicable"
+        ],
+        "type": "strain",
+        "label": "SAMPLE ATTRIBUTE: strain",
+        "selected": true,
+        "data": [
+            191,
+            191,
+            191,
+            191,
+            189,
+            345,
+            262,
+            236,
+            236,
+            259,
+            225,
+            193,
+            195,
+            191,
+            189,
+            188,
+            196,
+            215
+        ],
+        "values": [
+            {
+                "value": "C57BL/6",
+                "selected": true,
+                "count": 75
+            },
+            {
+                "value": "BY4741",
+                "selected": true,
+                "count": 158
+            },
+            {
+                "value": "DBA/2Crl",
+                "selected": true,
+                "count": 38
+            },
+            {
+                "value": "C57BL/6Crl",
+                "selected": true,
+                "count": 49
+            },
+            {
+                "value": "AB",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 28
+            },
+            {
+                "value": "Sprague-Dawley",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "Wistar Kyoto",
+                "selected": true,
+                "count": 9
+            },
+            {
+                "value": "DBA2/J",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Teleostei; Clupei; Clupeiformes; Clupeoidei; Engraulidae; Coilinae; Coilia",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "C57BL/6J",
+                "selected": true,
+                "count": 49
+            },
+            {
+                "value": "C57BL/6NCrl",
+                "selected": true,
+                "count": 72
+            },
+            {
+                "value": 1002,
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "32g58",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "R20291",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": 196,
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": 630,
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Brain",
+            "Brain (adult nucleus accumbens)",
+            "Brain (periaqueductal grey)",
+            "Brain (prefrontal cortex)",
+            "Brain Meninges",
+            "Brain neuron",
+            "Brain-ACC",
+            "Brain-BLA",
+            "Brain-CA1",
+            "Brain-CeA",
+            "Brain-NAc",
+            "Brain-PrL",
+            "NAC",
+            "Nucleus Accumbens (Nac)",
+            "Nucleus accumbens",
+            "PFC",
+            "Pooled sample - whole organisms and mixed tissues",
+            "VTA",
+            "brain",
+            "brain-hippocampus",
+            "cortex",
+            "prefrontal cortex (PFC)",
+            "whole brain"
+        ],
+        "type": "tissue",
+        "label": "SAMPLE ATTRIBUTE: tissue",
+        "selected": true,
+        "data": [
+            380,
+            376,
+            376,
+            376,
+            370,
+            366,
+            376,
+            376,
+            376,
+            376,
+            376,
+            376,
+            366,
+            384,
+            388,
+            368,
+            376,
+            366,
+            456,
+            373,
+            368,
+            383,
+            384
+        ],
+        "values": [
+            {
+                "value": "cortex",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "brain",
+                "selected": true,
+                "count": 92
+            },
+            {
+                "value": "Nucleus Accumbens (Nac)",
+                "selected": true,
+                "count": 20
+            },
+            {
+                "value": "prefrontal cortex (PFC)",
+                "selected": true,
+                "count": 19
+            },
+            {
+                "value": "Brain",
+                "selected": true,
+                "count": 16
+            },
+            {
+                "value": "Brain (periaqueductal grey)",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain (prefrontal cortex)",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain (adult nucleus accumbens)",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain Meninges",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Brain neuron",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NAC",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "PFC",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "VTA",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "brain-hippocampus",
+                "selected": true,
+                "count": 9
+            },
+            {
+                "value": "whole brain",
+                "selected": true,
+                "count": 20
+            },
+            {
+                "value": "Nucleus accumbens",
+                "selected": true,
+                "count": 24
+            },
+            {
+                "value": "Pooled sample - whole organisms and mixed tissues",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain-CeA",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain-BLA",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain-PrL",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain-CA1",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain-NAc",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain-ACC",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "E14-16"
+        ],
+        "type": "developmental stage",
+        "label": "SAMPLE ATTRIBUTE: developmental stage",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "E14-16",
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "TRPM2-KO-1",
+            "TRPM2-KO-2",
+            "WT-1",
+            "WT-2",
+            "Wild type",
+            "dabp140 knockout",
+            "dtrm1 knockout",
+            "dtrm10 knockout",
+            "spxA1 mutant",
+            "spxA1/spxA2 mutant",
+            "spxA2 mutant",
+            "wild type",
+            "wild type genotype"
+        ],
+        "type": "genotype",
+        "label": "SAMPLE ATTRIBUTE: genotype",
+        "selected": true,
+        "data": [
+            523,
+            523,
+            523,
+            523,
+            528,
+            526,
+            526,
+            528,
+            524,
+            524,
+            524,
+            526,
+            670
+        ],
+        "values": [
+            {
+                "value": "TRPM2-KO-2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "WT-2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "TRPM2-KO-1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "WT-1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "dabp140 knockout",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "dtrm10 knockout",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "dtrm1 knockout",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "wild type genotype",
+                "selected": true,
+                "count": 148
+            },
+            {
+                "value": "spxA1/spxA2 mutant",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "spxA2 mutant",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "spxA1 mutant",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "wild type",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "Wild type",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "2006",
+            "48-hour post-emergence adult male",
+            "NA",
+            "brain",
+            "not applicable",
+            "not collected"
+        ],
+        "type": "isolate",
+        "label": "SAMPLE ATTRIBUTE: isolate",
+        "selected": true,
+        "data": [
+            480,
+            477,
+            477,
+            481,
+            663,
+            471
+        ],
+        "values": [
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 194
+            },
+            {
+                "value": "brain",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "not collected",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "48-hour post-emergence adult male",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": 2006,
+                "selected": true,
+                "count": 11
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Saccharomyces cerevisiae"
+        ],
+        "type": "organism",
+        "label": "SAMPLE ATTRIBUTE: organism",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "Saccharomyces cerevisiae",
+                "selected": true,
+                "count": 158
+            }
+        ]
+    },
+    {
+        "labels": [
+            "YPD medium"
+        ],
+        "type": "growth condition",
+        "label": "SAMPLE ATTRIBUTE: growth condition",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "YPD medium",
+                "selected": true,
+                "count": 158
+            }
+        ]
+    },
+    {
+        "labels": [
+            "2016-07-13",
+            "2018-03-19"
+        ],
+        "type": "ENA-FIRST-PUBLIC",
+        "label": "SAMPLE ATTRIBUTE: ENA-FIRST-PUBLIC",
+        "selected": true,
+        "data": [
+            546,
+            698
+        ],
+        "values": [
+            {
+                "value": "2018-03-19",
+                "selected": true,
+                "count": 158
+            },
+            {
+                "value": "2016-07-13",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "2015-06-12",
+            "2018-03-09"
+        ],
+        "type": "ENA-LAST-UPDATE",
+        "label": "SAMPLE ATTRIBUTE: ENA-LAST-UPDATE",
+        "selected": true,
+        "data": [
+            546,
+            698
+        ],
+        "values": [
+            {
+                "value": "2018-03-09",
+                "selected": true,
+                "count": 158
+            },
+            {
+                "value": "2015-06-12",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "8 weeks"
+        ],
+        "type": "age on dissection",
+        "label": "SAMPLE ATTRIBUTE: age on dissection",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "8 weeks",
+                "selected": true,
+                "count": 87
+            }
+        ]
+    },
+    {
+        "labels": [
+            "female",
+            "male"
+        ],
+        "type": "Sex",
+        "label": "SAMPLE ATTRIBUTE: Sex",
+        "selected": true,
+        "data": [
+            569,
+            692
+        ],
+        "values": [
+            {
+                "value": "male",
+                "selected": true,
+                "count": 135
+            },
+            {
+                "value": "female",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "control",
+            "resilient",
+            "susceptible"
+        ],
+        "type": "csds phenotype",
+        "label": "SAMPLE ATTRIBUTE: csds phenotype",
+        "selected": true,
+        "data": [
+            650,
+            639,
+            649
+        ],
+        "values": [
+            {
+                "value": "susceptible",
+                "selected": true,
+                "count": 32
+            },
+            {
+                "value": "control",
+                "selected": true,
+                "count": 33
+            },
+            {
+                "value": "resilient",
+                "selected": true,
+                "count": 22
+            }
+        ]
+    },
+    {
+        "labels": [
+            "AZD1480 Thapsigargin Replicate 1",
+            "AZD1480 Thapsigargin Replicate 2",
+            "AZD1480 Thapsigargin Replicate 3",
+            "Control siRNA Thapsigargin Replicate 1",
+            "Control siRNA Thapsigargin Replicate 2",
+            "Control siRNA Thapsigargin Replicate 3",
+            "Control siRNA Untreated Replicate 1",
+            "Control siRNA Untreated Replicate 2",
+            "Control siRNA Untreated Replicate 3",
+            "JAK1 siRNA Thapsigargin Replicate 1",
+            "JAK1 siRNA Thapsigargin Replicate 2",
+            "JAK1 siRNA Thapsigargin Replicate 3",
+            "Thapsigargin Replicate 1",
+            "Thapsigargin Replicate 2",
+            "Thapsigargin Replicate 3"
+        ],
+        "type": "Replicates",
+        "label": "SAMPLE ATTRIBUTE: Replicates",
+        "selected": true,
+        "data": [
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690,
+            690
+        ],
+        "values": [
+            {
+                "value": "AZD1480 Thapsigargin Replicate 3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Thapsigargin Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Thapsigargin Replicate 3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "AZD1480 Thapsigargin Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "AZD1480 Thapsigargin Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Control siRNA Untreated Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Control siRNA Untreated Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Control siRNA Untreated Replicate 3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Control siRNA Thapsigargin Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Control siRNA Thapsigargin Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Control siRNA Thapsigargin Replicate 3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "JAK1 siRNA Thapsigargin Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "JAK1 siRNA Thapsigargin Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "JAK1 siRNA Thapsigargin Replicate 3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Thapsigargin Replicate 1",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "10 week",
+            "12 months",
+            "1yr",
+            "48-hour post emergence",
+            "7-8 weeks",
+            "8 hrs",
+            "Adult",
+            "E18",
+            "NA",
+            "P1",
+            "not applicable"
+        ],
+        "type": "age",
+        "label": "SAMPLE ATTRIBUTE: age",
+        "selected": true,
+        "data": [
+            492,
+            488,
+            498,
+            494,
+            558,
+            497,
+            522,
+            488,
+            525,
+            501,
+            501
+        ],
+        "values": [
+            {
+                "value": "P1",
+                "selected": true,
+                "count": 15
+            },
+            {
+                "value": "12 months",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            },
+            {
+                "value": "Adult",
+                "selected": true,
+                "count": 36
+            },
+            {
+                "value": "10 week",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "E18",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "1yr",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "48-hour post emergence",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 15
+            },
+            {
+                "value": "7-8 weeks",
+                "selected": true,
+                "count": 72
+            },
+            {
+                "value": "8 hrs",
+                "selected": true,
+                "count": 11
+            }
+        ]
+    },
+    {
+        "labels": [
+            "N/A",
+            "female",
+            "male",
+            "missing",
+            "not applicable",
+            "not determined",
+            "pooled male and female"
+        ],
+        "type": "sex",
+        "label": "SAMPLE ATTRIBUTE: sex",
+        "selected": true,
+        "data": [
+            547,
+            544,
+            639,
+            548,
+            539,
+            565,
+            538
+        ],
+        "values": [
+            {
+                "value": "not determined",
+                "selected": true,
+                "count": 29
+            },
+            {
+                "value": "male",
+                "selected": true,
+                "count": 103
+            },
+            {
+                "value": "missing",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "pooled male and female",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "female",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "N/A",
+                "selected": true,
+                "count": 11
+            }
+        ]
+    },
+    {
+        "labels": [
+            "39.65 N 79.96 W",
+            "Davis, CA",
+            "FFRC experimental base"
+        ],
+        "type": "birth_location",
+        "label": "SAMPLE ATTRIBUTE: birth_location",
+        "selected": true,
+        "data": [
+            695,
+            688,
+            681
+        ],
+        "values": [
+            {
+                "value": "39.65 N 79.96 W",
+                "selected": true,
+                "count": 15
+            },
+            {
+                "value": "FFRC experimental base",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Davis, CA",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "astrocyte"
+        ],
+        "type": "cell_type",
+        "label": "SAMPLE ATTRIBUTE: cell_type",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "astrocyte",
+                "selected": true,
+                "count": 15
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Human",
+            "Invertebrate",
+            "Model organism or animal"
+        ],
+        "type": "BioSampleModel",
+        "label": "SAMPLE ATTRIBUTE: BioSampleModel",
+        "selected": true,
+        "data": [
+            547,
+            544,
+            685
+        ],
+        "values": [
+            {
+                "value": "Model organism or animal",
+                "selected": true,
+                "count": 149
+            },
+            {
+                "value": "Invertebrate",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "Human",
+                "selected": true,
+                "count": 11
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Brian Trainor",
+            "F-LUBIN-UAB",
+            "Freshwater Fisheries Research Center, Chinese Academy of Fishery Sciences",
+            "Laboratory stock",
+            "PMID: 19181818",
+            "UC Davis Fish Conservation and Culture Laboratory"
+        ],
+        "type": "biomaterial_provider",
+        "label": "SAMPLE ATTRIBUTE: biomaterial_provider",
+        "selected": true,
+        "data": [
+            679,
+            673,
+            672,
+            675,
+            677,
+            683
+        ],
+        "values": [
+            {
+                "value": "F-LUBIN-UAB",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "PMID: 19181818",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Laboratory stock",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "Freshwater Fisheries Research Center, Chinese Academy of Fishery Sciences",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Brian Trainor",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "UC Davis Fish Conservation and Culture Laboratory",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Brain of juvenile without any treatment during development exposed to acute stress",
+            "Cells were grown in BHI medium to OD600 of 0.4, exposed to 0.5mM H2O2 for 5 minutes, then harvested by centrifugation, and stored at -80\u00b0C until use",
+            "Cells were grown in BHI medium to OD600 of 0.4, then harvested by centrifugation, and stored at -80\u00b0C until use",
+            "Control",
+            "Infection with T. gondii RH strain (type I) RPS 13-conditional KO-Tet off",
+            "Infection with T. gondii RH strain (type I) RPS 13-conditional KO-Tet on",
+            "Non-Shocked",
+            "Pooled samples for 454 transcriptome assembly",
+            "Sham surgery",
+            "Shocked",
+            "Spared nerve injury model (SNI)",
+            "Stress",
+            "control",
+            "maternal separation",
+            "neonatal handling",
+            "not applicable",
+            "stress",
+            "stressed mother",
+            "unstressed mother"
+        ],
+        "type": "treatment",
+        "label": "SAMPLE ATTRIBUTE: treatment",
+        "selected": true,
+        "data": [
+            506,
+            511,
+            505,
+            509,
+            510,
+            507,
+            539,
+            515,
+            521,
+            539,
+            521,
+            521,
+            506,
+            507,
+            507,
+            504,
+            512,
+            509,
+            509
+        ],
+        "values": [
+            {
+                "value": "stress",
+                "selected": true,
+                "count": 9
+            },
+            {
+                "value": "control",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Cells were grown in BHI medium to OD600 of 0.4, exposed to 0.5mM H2O2 for 5 minutes, then harvested by centrifugation, and stored at -80\u00b0C until use",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "Cells were grown in BHI medium to OD600 of 0.4, then harvested by centrifugation, and stored at -80\u00b0C until use",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "Spared nerve injury model (SNI)",
+                "selected": true,
+                "count": 18
+            },
+            {
+                "value": "Sham surgery",
+                "selected": true,
+                "count": 18
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "neonatal handling",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "maternal separation",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "stressed mother",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "unstressed mother",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Stress",
+                "selected": true,
+                "count": 18
+            },
+            {
+                "value": "Control",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Pooled samples for 454 transcriptome assembly",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Brain of juvenile without any treatment during development exposed to acute stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "Shocked",
+                "selected": true,
+                "count": 36
+            },
+            {
+                "value": "Non-Shocked",
+                "selected": true,
+                "count": 36
+            },
+            {
+                "value": "Infection with T. gondii RH strain (type I) RPS 13-conditional KO-Tet off",
+                "selected": true,
+                "count": 7
+            },
+            {
+                "value": "Infection with T. gondii RH strain (type I) RPS 13-conditional KO-Tet on",
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "female",
+            "male"
+        ],
+        "type": "gender",
+        "label": "SAMPLE ATTRIBUTE: gender",
+        "selected": true,
+        "data": [
+            685,
+            684
+        ],
+        "values": [
+            {
+                "value": "female",
+                "selected": true,
+                "count": 20
+            },
+            {
+                "value": "male",
+                "selected": true,
+                "count": 19
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "Cause of death",
+        "label": "SAMPLE ATTRIBUTE: Cause of death",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "pmi",
+        "label": "SAMPLE ATTRIBUTE: pmi",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "ph",
+        "label": "SAMPLE ATTRIBUTE: ph",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Stress",
+            "control",
+            "resilient",
+            "susceptible"
+        ],
+        "type": "phenotype",
+        "label": "SAMPLE ATTRIBUTE: phenotype",
+        "selected": true,
+        "data": [
+            655,
+            633,
+            632,
+            632
+        ],
+        "values": [
+            {
+                "value": "Stress",
+                "selected": true,
+                "count": 39
+            },
+            {
+                "value": "susceptible",
+                "selected": true,
+                "count": 16
+            },
+            {
+                "value": "resilient",
+                "selected": true,
+                "count": 16
+            },
+            {
+                "value": "control",
+                "selected": true,
+                "count": 17
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "alcool",
+        "label": "SAMPLE ATTRIBUTE: alcool",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "drugs",
+        "label": "SAMPLE ATTRIBUTE: drugs",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "drug type",
+        "label": "SAMPLE ATTRIBUTE: drug type",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "medication",
+        "label": "SAMPLE ATTRIBUTE: medication",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "medication type",
+        "label": "SAMPLE ATTRIBUTE: medication type",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA"
+        ],
+        "type": "smoking",
+        "label": "SAMPLE ATTRIBUTE: smoking",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 39
+            }
+        ]
+    },
+    {
+        "labels": [
+            "7.7",
+            "8.2",
+            "8.3",
+            "8.5",
+            "8.7",
+            "8.8",
+            "8.9",
+            "9",
+            "9.1",
+            "9.2",
+            "9.3",
+            "9.4",
+            "9.5",
+            "9.7"
+        ],
+        "type": "rin",
+        "label": "SAMPLE ATTRIBUTE: rin",
+        "selected": true,
+        "data": [
+            666,
+            666,
+            666,
+            668,
+            666,
+            671,
+            669,
+            668,
+            674,
+            667,
+            669,
+            667,
+            666,
+            666
+        ],
+        "values": [
+            {
+                "value": 8.8,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 9.3,
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": 9.1,
+                "selected": true,
+                "count": 9
+            },
+            {
+                "value": 8.9,
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": 9.4,
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": 9,
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": 9.7,
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": 9.5,
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": 9.2,
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": 8.2,
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": 8.3,
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": 8.5,
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": 7.7,
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": 8.7,
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Juvenile",
+            "Juvenile fish",
+            "Mixed - larval and adults",
+            "adult",
+            "embryo",
+            "juvenile"
+        ],
+        "type": "dev_stage",
+        "label": "SAMPLE ATTRIBUTE: dev_stage",
+        "selected": true,
+        "data": [
+            651,
+            637,
+            648,
+            673,
+            638,
+            637
+        ],
+        "values": [
+            {
+                "value": "Juvenile",
+                "selected": true,
+                "count": 15
+            },
+            {
+                "value": "juvenile",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "embryo",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "adult",
+                "selected": true,
+                "count": 37
+            },
+            {
+                "value": "Juvenile fish",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Mixed - larval and adults",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "BHI; brain heart infusion",
+            "BHI; brain heart infusion with 0.5mM H2O2"
+        ],
+        "type": "media",
+        "label": "SAMPLE ATTRIBUTE: media",
+        "selected": true,
+        "data": [
+            696,
+            702
+        ],
+        "values": [
+            {
+                "value": "BHI; brain heart infusion with 0.5mM H2O2",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "BHI; brain heart infusion",
+                "selected": true,
+                "count": 2
+            }
+        ]
+    },
+    {
+        "labels": [
+            "cold stress",
+            "healthy",
+            "heat stress"
+        ],
+        "type": "health_state",
+        "label": "SAMPLE ATTRIBUTE: health_state",
+        "selected": true,
+        "data": [
+            699,
+            698,
+            699
+        ],
+        "values": [
+            {
+                "value": "healthy",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "cold stress",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "heat stress",
+                "selected": true,
+                "count": 3
+            }
+        ]
+    },
+    {
+        "labels": [
+            "brain",
+            "tissue",
+            "tissue sample"
+        ],
+        "type": "sample_type",
+        "label": "SAMPLE ATTRIBUTE: sample_type",
+        "selected": true,
+        "data": [
+            696,
+            695,
+            689
+        ],
+        "values": [
+            {
+                "value": "tissue",
+                "selected": true,
+                "count": 7
+            },
+            {
+                "value": "brain",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "tissue sample",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "C57BL/6",
+            "C57BL/6J"
+        ],
+        "type": "strain/background",
+        "label": "SAMPLE ATTRIBUTE: strain/background",
+        "selected": true,
+        "data": [
+            680,
+            668
+        ],
+        "values": [
+            {
+                "value": "C57BL/6",
+                "selected": true,
+                "count": 36
+            },
+            {
+                "value": "C57BL/6J",
+                "selected": true,
+                "count": 24
+            }
+        ]
+    },
+    {
+        "labels": [
+            "2.5 months"
+        ],
+        "type": "time after treatment",
+        "label": "SAMPLE ATTRIBUTE: time after treatment",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "2.5 months",
+                "selected": true,
+                "count": 36
+            }
+        ]
+    },
+    {
+        "labels": [
+            "none",
+            "spinal cord injury"
+        ],
+        "type": "stress",
+        "label": "SAMPLE ATTRIBUTE: stress",
+        "selected": true,
+        "data": [
+            701,
+            701
+        ],
+        "values": [
+            {
+                "value": "spinal cord injury",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "none",
+                "selected": true,
+                "count": 3
+            }
+        ]
+    },
+    {
+        "labels": [
+            "adult neuronal progenitor cell",
+            "differentiated adult neuronal progenitor cell",
+            "microglia"
+        ],
+        "type": "cell type",
+        "label": "SAMPLE ATTRIBUTE: cell type",
+        "selected": true,
+        "data": [
+            689,
+            684,
+            693
+        ],
+        "values": [
+            {
+                "value": "microglia",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "differentiated adult neuronal progenitor cell",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "adult neuronal progenitor cell",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Dnmt3a2lox/2lox",
+            "Mecp2 knockout",
+            "WT",
+            "wildtype"
+        ],
+        "type": "genotype/variation",
+        "label": "SAMPLE ATTRIBUTE: genotype/variation",
+        "selected": true,
+        "data": [
+            680,
+            674,
+            680,
+            674
+        ],
+        "values": [
+            {
+                "value": "wildtype",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Mecp2 knockout",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "WT",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "Dnmt3a2lox/2lox",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "week 24",
+            "week 5"
+        ],
+        "type": "Stage",
+        "label": "SAMPLE ATTRIBUTE: Stage",
+        "selected": true,
+        "data": [
+            698,
+            698
+        ],
+        "values": [
+            {
+                "value": "week 24",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "week 5",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA",
+            "not applicable",
+            "not collected"
+        ],
+        "type": "breed",
+        "label": "SAMPLE ATTRIBUTE: breed",
+        "selected": true,
+        "data": [
+            666,
+            694,
+            660
+        ],
+        "values": [
+            {
+                "value": "not collected",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 36
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA",
+            "not applicable",
+            "not collected"
+        ],
+        "type": "cultivar",
+        "label": "SAMPLE ATTRIBUTE: cultivar",
+        "selected": true,
+        "data": [
+            666,
+            694,
+            660
+        ],
+        "values": [
+            {
+                "value": "not collected",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 36
+            }
+        ]
+    },
+    {
+        "labels": [
+            "California",
+            "NA",
+            "marine",
+            "not applicable",
+            "not collected"
+        ],
+        "type": "ecotype",
+        "label": "SAMPLE ATTRIBUTE: ecotype",
+        "selected": true,
+        "data": [
+            670,
+            666,
+            670,
+            670,
+            660
+        ],
+        "values": [
+            {
+                "value": "not collected",
+                "selected": true,
+                "count": 2
+            },
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "not applicable",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "marine",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "California",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "ELS - CSDS",
+            "ELS - Ctl",
+            "Std - CSDS",
+            "Std - Ctl"
+        ],
+        "type": "stress conditions",
+        "label": "SAMPLE ATTRIBUTE: stress conditions",
+        "selected": true,
+        "data": [
+            674,
+            680,
+            674,
+            680
+        ],
+        "values": [
+            {
+                "value": "Std - CSDS",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "Std - Ctl",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "ELS - CSDS",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "ELS - Ctl",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "H3K4me1 (AbCam AB8895)",
+            "none"
+        ],
+        "type": "chip antibody",
+        "label": "SAMPLE ATTRIBUTE: chip antibody",
+        "selected": true,
+        "data": [
+            696,
+            696
+        ],
+        "values": [
+            {
+                "value": "none",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "H3K4me1 (AbCam AB8895)",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "stressed mother",
+            "unstressed mother",
+            "virgin"
+        ],
+        "type": "breeding_history",
+        "label": "SAMPLE ATTRIBUTE: breeding_history",
+        "selected": true,
+        "data": [
+            690,
+            690,
+            692
+        ],
+        "values": [
+            {
+                "value": "virgin",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "stressed mother",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "unstressed mother",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "captive"
+        ],
+        "type": "breeding_method",
+        "label": "SAMPLE ATTRIBUTE: breeding_method",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "captive",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "S. frugiperda individuals were purchased from Frontier Agricultural Sciences (Newark, DE, USA) as larvae and reared until adulthood",
+            "healthy"
+        ],
+        "type": "isolation_source",
+        "label": "SAMPLE ATTRIBUTE: isolation_source",
+        "selected": true,
+        "data": [
+            696,
+            696
+        ],
+        "values": [
+            {
+                "value": "healthy",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "S. frugiperda individuals were purchased from Frontier Agricultural Sciences (Newark, DE, USA) as larvae and reared until adulthood",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "forward",
+            "reverse"
+        ],
+        "type": "read",
+        "label": "SAMPLE ATTRIBUTE: read",
+        "selected": true,
+        "data": [
+            700,
+            700
+        ],
+        "values": [
+            {
+                "value": "forward",
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": "reverse",
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "-40 C"
+        ],
+        "type": "store_cond",
+        "label": "SAMPLE ATTRIBUTE: store_cond",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "-40 C",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "NA",
+            "No. MS Replicate 1",
+            "No. MS Replicate 2",
+            "No. NH Replicate 1",
+            "No. NH Replicate 2",
+            "Yes. MS Replicate 1",
+            "Yes. MS Replicate 2",
+            "Yes. NH Replicate 1",
+            "Yes. NH Replicate 2"
+        ],
+        "type": "Aggression to homecage intruder",
+        "label": "SAMPLE ATTRIBUTE: Aggression to homecage intruder",
+        "selected": true,
+        "data": [
+            696,
+            696,
+            696,
+            696,
+            696,
+            696,
+            696,
+            696,
+            696
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Yes. NH Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Yes. NH Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "No. NH Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "No. NH Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Yes. MS Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Yes. MS Replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "No. MS Replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "No. MS Replicate 1",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "1",
+            "2",
+            "3"
+        ],
+        "type": "Replicate",
+        "label": "SAMPLE ATTRIBUTE: Replicate",
+        "selected": true,
+        "data": [
+            696,
+            696,
+            696
+        ],
+        "values": [
+            {
+                "value": 1,
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": 3,
+                "selected": true,
+                "count": 4
+            },
+            {
+                "value": 2,
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "AAV-CRE",
+            "AAV-GFP",
+            "NA"
+        ],
+        "type": "virus",
+        "label": "SAMPLE ATTRIBUTE: virus",
+        "selected": true,
+        "data": [
+            686,
+            686,
+            692
+        ],
+        "values": [
+            {
+                "value": "NA",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "AAV-GFP",
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": "AAV-CRE",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "brain",
+            "skin",
+            "whole blood"
+        ],
+        "type": "tissue_type",
+        "label": "SAMPLE ATTRIBUTE: tissue_type",
+        "selected": true,
+        "data": [
+            698,
+            692,
+            692
+        ],
+        "values": [
+            {
+                "value": "brain",
+                "selected": true,
+                "count": 9
+            },
+            {
+                "value": "skin",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "whole blood",
+                "selected": true,
+                "count": 3
+            }
+        ]
+    },
+    {
+        "labels": [
+            "1st-May-2015"
+        ],
+        "type": "birth_date",
+        "label": "SAMPLE ATTRIBUTE: birth_date",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "1st-May-2015",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Meiyao Wang, Feng Gao, Shuji Bai",
+            "Scott D Cinel"
+        ],
+        "type": "collected_by",
+        "label": "SAMPLE ATTRIBUTE: collected_by",
+        "selected": true,
+        "data": [
+            696,
+            703
+        ],
+        "values": [
+            {
+                "value": "Meiyao Wang, Feng Gao, Shuji Bai",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "Scott D Cinel",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "ERS1101756",
+            "ERS1101757",
+            "ERS1101758",
+            "ERS1101759",
+            "ERS1101760",
+            "ERS1101761",
+            "ERS1101762",
+            "ERS1101763",
+            "ERS1101764",
+            "ERS1101765",
+            "ERS1101766",
+            "ERS1101767",
+            "ERS1101768",
+            "ERS1101769",
+            "ERS1101770",
+            "ERS1101771",
+            "ERS1101772",
+            "ERS1101773",
+            "ERS1101774",
+            "ERS1101775",
+            "ERS1101776",
+            "ERS1101777",
+            "ERS1101778",
+            "ERS1101779",
+            "ERS364193"
+        ],
+        "type": "Sample Name",
+        "label": "SAMPLE ATTRIBUTE: Sample Name",
+        "selected": true,
+        "data": [
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            677,
+            680
+        ],
+        "values": [
+            {
+                "value": "ERS1101779",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101778",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101777",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101776",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101775",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101774",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101773",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101772",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101771",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101770",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101769",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101768",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101767",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101766",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101765",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101764",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101763",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101762",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101761",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101760",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101759",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101758",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101757",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS1101756",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "ERS364193",
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "RNA"
+        ],
+        "type": "bio material",
+        "label": "SAMPLE ATTRIBUTE: bio material",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "RNA",
+                "selected": true,
+                "count": 24
+            }
+        ]
+    },
+    {
+        "labels": [
+            "hippocampus",
+            "hypothalamus"
+        ],
+        "type": "organism part",
+        "label": "SAMPLE ATTRIBUTE: organism part",
+        "selected": true,
+        "data": [
+            692,
+            692
+        ],
+        "values": [
+            {
+                "value": "hypothalamus",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "hippocampus",
+                "selected": true,
+                "count": 12
+            }
+        ]
+    },
+    {
+        "labels": [
+            "control replicate = biological replicate1",
+            "control replicate = biological replicate2",
+            "control replicate = biological replicate3",
+            "control replicate = biological replicate4",
+            "exposed replicate = biological replicate 1",
+            "exposed replicate = biological replicate 2",
+            "exposed replicate = biological replicate 3",
+            "exposed replicate = biological replicate 4"
+        ],
+        "type": "replicate",
+        "label": "SAMPLE ATTRIBUTE: replicate",
+        "selected": true,
+        "data": [
+            697,
+            697,
+            697,
+            697,
+            697,
+            697,
+            697,
+            697
+        ],
+        "values": [
+            {
+                "value": "exposed replicate = biological replicate 4",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "exposed replicate = biological replicate 3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "exposed replicate = biological replicate 2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "exposed replicate = biological replicate 1",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "control replicate = biological replicate4",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "control replicate = biological replicate3",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "control replicate = biological replicate2",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "control replicate = biological replicate1",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Dec-2015"
+        ],
+        "type": "collection_date",
+        "label": "SAMPLE ATTRIBUTE: collection_date",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "Dec-2015",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "USA: Newark, DE",
+            "the coast of King George island"
+        ],
+        "type": "geo_loc_name",
+        "label": "SAMPLE ATTRIBUTE: geo_loc_name",
+        "selected": true,
+        "data": [
+            695,
+            696
+        ],
+        "values": [
+            {
+                "value": "USA: Newark, DE",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "the coast of King George island",
+                "selected": true,
+                "count": 9
+            }
+        ]
+    },
+    {
+        "labels": [
+            "233 m"
+        ],
+        "type": "altitude",
+        "label": "SAMPLE ATTRIBUTE: altitude",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "233 m",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "29 celsius"
+        ],
+        "type": "temp",
+        "label": "SAMPLE ATTRIBUTE: temp",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "29 celsius",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "AAV-Cre injection",
+            "AAV-GFP injection"
+        ],
+        "type": "protocol",
+        "label": "SAMPLE ATTRIBUTE: protocol",
+        "selected": true,
+        "data": [
+            697,
+            697
+        ],
+        "values": [
+            {
+                "value": "AAV-GFP injection",
+                "selected": true,
+                "count": 7
+            },
+            {
+                "value": "AAV-Cre injection",
+                "selected": true,
+                "count": 7
+            }
+        ]
+    },
+    {
+        "labels": [
+            "adult amygdala",
+            "adult nucleus accumbens",
+            "adult prefrontal cortex",
+            "adult ventral hippocampus"
+        ],
+        "type": "brain region",
+        "label": "SAMPLE ATTRIBUTE: brain region",
+        "selected": true,
+        "data": [
+            668,
+            667,
+            667,
+            667
+        ],
+        "values": [
+            {
+                "value": "adult ventral hippocampus",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "adult prefrontal cortex",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "adult nucleus accumbens",
+                "selected": true,
+                "count": 12
+            },
+            {
+                "value": "adult amygdala",
+                "selected": true,
+                "count": 13
+            }
+        ]
+    },
+    {
+        "labels": [
+            "28d +1h stress post CSDS"
+        ],
+        "type": "timepoint",
+        "label": "SAMPLE ATTRIBUTE: timepoint",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "28d +1h stress post CSDS",
+                "selected": true,
+                "count": 49
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Fluoxetine",
+            "Vehicle"
+        ],
+        "type": "drug",
+        "label": "SAMPLE ATTRIBUTE: drug",
+        "selected": true,
+        "data": [
+            668,
+            668
+        ],
+        "values": [
+            {
+                "value": "Vehicle",
+                "selected": true,
+                "count": 36
+            },
+            {
+                "value": "Fluoxetine",
+                "selected": true,
+                "count": 36
+            }
+        ]
+    },
+    {
+        "labels": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+        ],
+        "type": "animal",
+        "label": "SAMPLE ATTRIBUTE: animal",
+        "selected": true,
+        "data": [
+            638,
+            638,
+            638,
+            638,
+            638,
+            638,
+            638,
+            638,
+            638,
+            638,
+            638,
+            638
+        ],
+        "values": [
+            {
+                "value": 4,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 1,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 12,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 10,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 6,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 3,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 9,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 7,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 11,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 5,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 8,
+                "selected": true,
+                "count": 6
+            },
+            {
+                "value": 2,
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "frozen specimen"
+        ],
+        "type": "specimen with known storage state",
+        "label": "SAMPLE ATTRIBUTE: specimen with known storage state",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "frozen specimen",
+                "selected": true,
+                "count": 4
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Rima McLeod"
+        ],
+        "type": "biomaterial provider",
+        "label": "SAMPLE ATTRIBUTE: biomaterial provider",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "Rima McLeod",
+                "selected": true,
+                "count": 11
+            }
+        ]
+    },
+    {
+        "labels": [
+            "AHNP",
+            "AHNP-derived neuronal"
+        ],
+        "type": "cell line",
+        "label": "SAMPLE ATTRIBUTE: cell line",
+        "selected": true,
+        "data": [
+            701,
+            696
+        ],
+        "values": [
+            {
+                "value": "AHNP-derived neuronal",
+                "selected": true,
+                "count": 3
+            },
+            {
+                "value": "AHNP",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    },
+    {
+        "labels": [
+            "mRNA from cell culture",
+            "miRNA from cell culture"
+        ],
+        "type": "sample type",
+        "label": "SAMPLE ATTRIBUTE: sample type",
+        "selected": true,
+        "data": [
+            698,
+            699
+        ],
+        "values": [
+            {
+                "value": "mRNA from cell culture",
+                "selected": true,
+                "count": 5
+            },
+            {
+                "value": "miRNA from cell culture",
+                "selected": true,
+                "count": 6
+            }
+        ]
+    },
+    {
+        "labels": [
+            "mRNA-139",
+            "mRNA-140",
+            "mRNA-73",
+            "mRNA-74",
+            "mRNA-76",
+            "miRNA-139",
+            "miRNA-140",
+            "miRNA-73",
+            "miRNA-74",
+            "miRNA-75",
+            "miRNA-76"
+        ],
+        "type": "experiment_id",
+        "label": "SAMPLE ATTRIBUTE: experiment_id",
+        "selected": true,
+        "data": [
+            694,
+            694,
+            694,
+            694,
+            694,
+            694,
+            694,
+            694,
+            694,
+            694,
+            694
+        ],
+        "values": [
+            {
+                "value": "mRNA-76",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "mRNA-140",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "miRNA-74",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "miRNA-73",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "miRNA-139",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "mRNA-74",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "mRNA-73",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "mRNA-139",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "miRNA-76",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "miRNA-75",
+                "selected": true,
+                "count": 1
+            },
+            {
+                "value": "miRNA-140",
+                "selected": true,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Secreted protein into the host cell. Ribosomal protein/small subunit 13. Knockout results in G0 arrested parasite.  First step of stress response and bradyzoite differentiation.  Prolonged survival knockout 100% protective vaccine."
+        ],
+        "type": "additional_information",
+        "label": "SAMPLE ATTRIBUTE: additional_information",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "Secreted protein into the host cell. Ribosomal protein/small subunit 13. Knockout results in G0 arrested parasite.  First step of stress response and bradyzoite differentiation.  Prolonged survival knockout 100% protective vaccine.",
+                "selected": true,
+                "count": 11
+            }
+        ]
+    },
+    {
+        "labels": [
+            "Sejong01"
+        ],
+        "type": "label",
+        "label": "SAMPLE ATTRIBUTE: label",
+        "selected": true,
+        "data": [
+            704
+        ],
+        "values": [
+            {
+                "value": "Sejong01",
+                "selected": true,
+                "count": 9
+            }
+        ]
+    },
+    {
+        "labels": [
+            "exposed to Brain heart infusion broth supplimented with 1.5% NaCl for 1h",
+            "grown to mid log phase"
+        ],
+        "type": "growth/treatment condition",
+        "label": "SAMPLE ATTRIBUTE: growth/treatment condition",
+        "selected": true,
+        "data": [
+            696,
+            696
+        ],
+        "values": [
+            {
+                "value": "exposed to Brain heart infusion broth supplimented with 1.5% NaCl for 1h",
+                "selected": true,
+                "count": 8
+            },
+            {
+                "value": "grown to mid log phase",
+                "selected": true,
+                "count": 8
+            }
+        ]
+    }
+]

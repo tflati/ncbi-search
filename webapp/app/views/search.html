@@ -5,11 +5,11 @@
 
 <div ng-if="!project" layout="column" layout-align="center center" style="padding-top: 30px;">
 	<i class="fas fa-cog fa-5x fa-spin" md-colors="{color:'primary'}"></i>
-	<p style="font-size: 1.5em;">Loading project<div class="progress container">
+	<p style="font-size: 1.5em;">Loading project<span class="progress container">
 	    <span></span>
 	    <span></span>
 	    <span></span>
-	</div></p>
+	</span></p>
 </div>
 
 <div ng-if="project && !result && !search_started" layout="column" layout-align="center center">
@@ -17,7 +17,12 @@
 	<img src="images/start-search.jpg">
 </div>
 
-<div layout="rows" layout-align="start start" ng-if="result" class="result-container" layout-padding>
+<div ng-if="result.length == 0" layout="column" layout-align="center center">
+	<h1>No results available.</h1>
+	<img src="images/no_results.jpg">
+</div>
+
+<div layout="rows" layout-align="start start" ng-if="result.length > 0" class="result-container" layout-padding>
 	
 	<div ng-if="filters.length > 0" flex="25" layout="column" layout-align="start center" class="side-filters">
 		<p><b>Filters</b>:</p>
@@ -29,17 +34,23 @@
 		<div layout="column" layout-padding>
 			<div ng-repeat="filter in filters">
 		        <md-subheader class="md-no-sticky">
-		        	<md-checkbox class="small-checkbox md-warn" title="Toggle all sub-filters" aria-label="Toggle all sub-filters" ng-model="filter.selected" ng-change="toggle_all(filter)")></md-checkbox> {{filter.label}}</md-subheader>
+		        	<md-checkbox class="small-checkbox md-warn" title="Toggle all sub-filters" aria-label="Toggle all sub-filters" ng-model="filter.selected" ng-change="toggle_all(filter)"></md-checkbox> {{filter.label}}</md-subheader>
 		        <div class="small-margin" ng-repeat="f in filter.values">
-		            <md-checkbox class="small-checkbox md-hue-3" title="{{filter.type}} filter" aria-label="{{filter.type}} filter" ng-model="f.selected" ng-change="filter_clicked(f, filter)")></md-checkbox>
+		            <md-checkbox class="small-checkbox md-hue-3" title="{{filter.type}} filter" aria-label="{{filter.type}} filter" ng-model="f.selected" ng-change="filter_clicked(f, filter)"></md-checkbox>
 		            {{f.value}} ({{f.count}} exp.)
 		        </div>
 	        </div>
 		</div>
 	</div>
 	
-	<div layout="column" layout-align="start start">
+	<div ng-if="result" layout="column" layout-align="start start">
 		<md-card>
+			<md-card-actions layout="row" layout-align="end center">
+				<md-button ng-click="write_note()" layout="row" layout-align="center center" class="md-raised" aria-label="Add note">
+					<i class="fas fa-sticky-note fa-3x" style="color: gold;"></i>
+					<span layout-padding>Add a note</span>
+				</md-button>
+	        </md-card-actions>
 	        <md-card-title>
 	          <md-card-title-text>
 	            <span class="md-headline">Results</span>
@@ -47,14 +58,6 @@
 			</md-card-title>
 	        <md-card-content layout="column">
 	        	
-	        	<section>
-		        	<p ng-if="result.length != undefined">
-<!-- 							<div><b ng-bind="result.length"></b> bioproject(s) found</div> -->
-<!-- 							<div><b>{{result | apply:get_experiments | concat | length}}</b> experiment(s)</div> -->
-<!-- 							<div><b>{{result | apply:get_experiments | concat | apply:get_runs | lengths | sum}}</b> sample(s)</div> -->
-					</p>
-				</section>
-		
 				<section>
 					<table>
 						<thead>
@@ -93,41 +96,31 @@
 	        </md-card-content>
 		</md-card>
 		
-		<md-card>
-	        <md-card-title>
-	          <md-card-title-text>
-	            <span class="md-headline">Charts</span>
-	          </md-card-title-text>
-	        </md-card-title>
-	        <md-card-content layout="column">
+<!-- 		<md-card> -->
+<!-- 	        <md-card-title> -->
+<!-- 	          <md-card-title-text> -->
+<!-- 	            <span class="md-headline">Charts</span> -->
+<!-- 	          </md-card-title-text> -->
+<!-- 	        </md-card-title> -->
+<!-- 	        <md-card-content layout="column"> -->
 		
-				<section>
-					<div layout="row" layout-wrap>
+<!-- 				<section> -->
+<!-- 					<div layout="row" layout-wrap> -->
 						
-						<div ng-repeat="filter in filters" layout="column" layout-align="start start" style="margin-bottom: 30px; margin-right: 20px; max-height: 500px;">
-							<h3 layout="row" layout-align="start center"><span>{{filter.label}}</span>&nbsp;&nbsp;<a href="#" ng-click="see_chart(filter)" class="fas fa-chart-bar fa-2x" style="text-decoration: none; color: #ff8700;"></a></h3>
-							<canvas
-								class="chart chart-bar"
-								chart-data="filter.data"
-								chart-labels="filter.labels"
-							></canvas>
-						</div>
-					</div>
-				</section>
+<!-- 						<div ng-repeat="filter in filters" layout="column" layout-align="start start" style="margin-bottom: 30px; margin-right: 20px; max-height: 500px;"> -->
+<!-- 							<h3 layout="row" layout-align="start center"><span>{{filter.label}}</span>&nbsp;&nbsp;<a ng-click="see_chart(filter)" class="fas fa-chart-bar fa-2x" style="cursor: pointer; color: #ff8700;"></a></h3> -->
+<!-- 							<canvas -->
+<!-- 								class="chart chart-bar" -->
+<!-- 								chart-data="filter.data" -->
+<!-- 								chart-labels="filter.labels" -->
+<!-- 							></canvas> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</section> -->
 				
-			</md-card-content>
-		</md-card>
+<!-- 			</md-card-content> -->
+<!-- 		</md-card> -->
 	</div>
-	
-<!-- 			<md-list flex> -->
-		
-<!-- 				<div paging -->
-<!-- 					  page="1"  -->
-<!-- 					  page-size="10"  -->
-<!-- 					  total="result | filterApplier:filters | length" -->
-<!-- 					  paging-action="goToPage('Page clicked', result | filterApplier:filters, page, pageSize, total)"> -->
-<!-- 	        	</div> -->
-<!--         	</md-list> -->
 </div>
 
 

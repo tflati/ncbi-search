@@ -1,0 +1,1734 @@
+[
+    {
+        "selected": true,
+        "labels": [
+            "Illumina HiSeq 2000"
+        ],
+        "values": [
+            {
+                "count": 341,
+                "selected": true,
+                "value": "Illumina HiSeq 2000"
+            }
+        ],
+        "type": "PLATFORM",
+        "label": "PLATFORM",
+        "data": [
+            341
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "PAIRED"
+        ],
+        "values": [
+            {
+                "count": 341,
+                "selected": true,
+                "value": "PAIRED"
+            }
+        ],
+        "type": "LIBRARY LAYOUT",
+        "label": "LIBRARY LAYOUT",
+        "data": [
+            341
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "TRANSCRIPTOMIC"
+        ],
+        "values": [
+            {
+                "count": 341,
+                "selected": true,
+                "value": "TRANSCRIPTOMIC"
+            }
+        ],
+        "type": "LIBRARY SOURCE",
+        "label": "LIBRARY SOURCE",
+        "data": [
+            341
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "WITH PAPER"
+        ],
+        "values": [
+            {
+                "count": 341,
+                "selected": true,
+                "value": "WITH PAPER"
+            }
+        ],
+        "type": "PUBLICATION",
+        "label": "PUBLICATION",
+        "data": [
+            341
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "Homo sapiens",
+            "Mus musculus"
+        ],
+        "values": [
+            {
+                "count": 263,
+                "selected": true,
+                "value": "Homo sapiens"
+            },
+            {
+                "count": 78,
+                "selected": true,
+                "value": "Mus musculus"
+            }
+        ],
+        "type": "ORGANISM",
+        "label": "ORGANISM",
+        "data": [
+            263,
+            78
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "Nucleus Accumbens (Nac)",
+            "postmortem brain",
+            "prefrontal cortex (PFC)"
+        ],
+        "values": [
+            {
+                "count": 263,
+                "selected": true,
+                "value": "postmortem brain"
+            },
+            {
+                "count": 40,
+                "selected": true,
+                "value": "Nucleus Accumbens (Nac)"
+            },
+            {
+                "count": 38,
+                "selected": true,
+                "value": "prefrontal cortex (PFC)"
+            }
+        ],
+        "type": "source_name",
+        "label": "SAMPLE ATTRIBUTE: source_name",
+        "data": [
+            40,
+            263,
+            38
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "Anterior Insula (aINS)",
+            "Cingulate gyrus 25 (Cg25)",
+            "Dorsolateral prefrontal cortex (dlPFC; BA8/9)",
+            "Nucleus Accumbens (Nac)",
+            "Orbitofrontal (OFC; BA11)",
+            "Subiculum (Sub)",
+            "prefrontal cortex (PFC)"
+        ],
+        "values": [
+            {
+                "count": 43,
+                "selected": true,
+                "value": "Subiculum (Sub)"
+            },
+            {
+                "count": 88,
+                "selected": true,
+                "value": "Nucleus Accumbens (Nac)"
+            },
+            {
+                "count": 48,
+                "selected": true,
+                "value": "Anterior Insula (aINS)"
+            },
+            {
+                "count": 28,
+                "selected": true,
+                "value": "Cingulate gyrus 25 (Cg25)"
+            },
+            {
+                "count": 48,
+                "selected": true,
+                "value": "Dorsolateral prefrontal cortex (dlPFC; BA8/9)"
+            },
+            {
+                "count": 48,
+                "selected": true,
+                "value": "Orbitofrontal (OFC; BA11)"
+            },
+            {
+                "count": 38,
+                "selected": true,
+                "value": "prefrontal cortex (PFC)"
+            }
+        ],
+        "type": "tissue",
+        "label": "SAMPLE ATTRIBUTE: tissue",
+        "data": [
+            48,
+            28,
+            48,
+            88,
+            48,
+            43,
+            38
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "female",
+            "male"
+        ],
+        "values": [
+            {
+                "count": 163,
+                "selected": true,
+                "value": "female"
+            },
+            {
+                "count": 178,
+                "selected": true,
+                "value": "male"
+            }
+        ],
+        "type": "gender",
+        "label": "SAMPLE ATTRIBUTE: gender",
+        "data": [
+            163,
+            178
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "Accident",
+            "NA",
+            "Natural",
+            "Suicide"
+        ],
+        "values": [
+            {
+                "count": 203,
+                "selected": true,
+                "value": "Suicide"
+            },
+            {
+                "count": 21,
+                "selected": true,
+                "value": "Accident"
+            },
+            {
+                "count": 39,
+                "selected": true,
+                "value": "Natural"
+            },
+            {
+                "count": 78,
+                "selected": true,
+                "value": "NA"
+            }
+        ],
+        "type": "Cause of death",
+        "label": "SAMPLE ATTRIBUTE: Cause of death",
+        "data": [
+            21,
+            78,
+            39,
+            203
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "19",
+            "22",
+            "25",
+            "28",
+            "29",
+            "31",
+            "32",
+            "33",
+            "36",
+            "38",
+            "39",
+            "40",
+            "41",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "59",
+            "60",
+            "63",
+            "64",
+            "67",
+            "68",
+            "72",
+            "79",
+            "82",
+            "NA"
+        ],
+        "values": [
+            {
+                "count": 6,
+                "selected": true,
+                "value": 51
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 59
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 68
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 22
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 60
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 52
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 36
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 48
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 45
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 29
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 41
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 72
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 64
+            },
+            {
+                "count": 16,
+                "selected": true,
+                "value": 55
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 32
+            },
+            {
+                "count": 15,
+                "selected": true,
+                "value": 46
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 67
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 54
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 25
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 63
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 40
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 39
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 44
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 38
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 53
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 33
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 49
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 19
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 31
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 47
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 82
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 79
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 28
+            },
+            {
+                "count": 78,
+                "selected": true,
+                "value": "NA"
+            }
+        ],
+        "type": "age",
+        "label": "SAMPLE ATTRIBUTE: age",
+        "data": [
+            6,
+            11,
+            10,
+            4,
+            11,
+            6,
+            6,
+            5,
+            6,
+            10,
+            10,
+            11,
+            12,
+            5,
+            6,
+            15,
+            6,
+            12,
+            5,
+            6,
+            12,
+            5,
+            6,
+            16,
+            12,
+            6,
+            6,
+            5,
+            6,
+            11,
+            6,
+            4,
+            5,
+            78
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "10",
+            "106",
+            "12",
+            "15",
+            "16",
+            "17",
+            "17.5",
+            "18",
+            "18.5",
+            "19",
+            "19.5",
+            "2",
+            "2.5",
+            "20",
+            "23.5",
+            "24",
+            "27",
+            "27.75",
+            "28.5",
+            "29.5",
+            "29.75",
+            "3",
+            "30",
+            "32",
+            "33.5",
+            "36",
+            "38",
+            "4",
+            "4.5",
+            "41",
+            "44",
+            "44.5",
+            "49",
+            "49.5",
+            "50",
+            "56",
+            "59",
+            "6.5",
+            "7.5",
+            "8.5",
+            "NA"
+        ],
+        "values": [
+            {
+                "count": 6,
+                "selected": true,
+                "value": 16
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 23.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 3
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 8.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 2
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 38
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 4.5
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 7.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 17.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 44
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 4
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 12
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 17
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 2.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 10
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 41
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 59
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 56
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 49
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 28.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 50
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 49.5
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 18.5
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 32
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 27
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 29.5
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 36
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 15
+            },
+            {
+                "count": 16,
+                "selected": true,
+                "value": 24
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 30
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 19
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 33.5
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 44.5
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 18
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 29.75
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 27.75
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 106
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 20
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 19.5
+            },
+            {
+                "count": 78,
+                "selected": true,
+                "value": "NA"
+            }
+        ],
+        "type": "pmi",
+        "label": "SAMPLE ATTRIBUTE: pmi",
+        "data": [
+            6,
+            5,
+            12,
+            5,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            4,
+            6,
+            6,
+            4,
+            6,
+            16,
+            5,
+            6,
+            6,
+            11,
+            5,
+            6,
+            5,
+            10,
+            5,
+            9,
+            6,
+            6,
+            6,
+            6,
+            6,
+            5,
+            6,
+            6,
+            6,
+            12,
+            6,
+            5,
+            10,
+            6,
+            78
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "6",
+            "6.1",
+            "6.11",
+            "6.21",
+            "6.25",
+            "6.26",
+            "6.27",
+            "6.37",
+            "6.4",
+            "6.42",
+            "6.49",
+            "6.5",
+            "6.53",
+            "6.55",
+            "6.56",
+            "6.57",
+            "6.67",
+            "6.68",
+            "6.7",
+            "6.71",
+            "6.73",
+            "6.74",
+            "6.75",
+            "6.76",
+            "6.77",
+            "6.79",
+            "6.81",
+            "6.83",
+            "6.84",
+            "6.85",
+            "6.86",
+            "6.89",
+            "6.9",
+            "6.91",
+            "6.93",
+            "6.95",
+            "6.96",
+            "7",
+            "NA"
+        ],
+        "values": [
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.71
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.76
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.27
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.21
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 7
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 6.7
+            },
+            {
+                "count": 24,
+                "selected": true,
+                "value": 6.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.9
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 6.4
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.1
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.25
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.11
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.89
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.83
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.85
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.56
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.77
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.55
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.95
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.81
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.37
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 6.93
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.96
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 6.73
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.79
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.53
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 6.68
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.86
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.75
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": 6
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.91
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.84
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.57
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.26
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.74
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.67
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 6.49
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 6.42
+            },
+            {
+                "count": 78,
+                "selected": true,
+                "value": "NA"
+            }
+        ],
+        "type": "ph",
+        "label": "SAMPLE ATTRIBUTE: ph",
+        "data": [
+            11,
+            6,
+            6,
+            6,
+            5,
+            5,
+            6,
+            5,
+            10,
+            4,
+            6,
+            24,
+            5,
+            6,
+            6,
+            5,
+            6,
+            10,
+            12,
+            6,
+            9,
+            6,
+            5,
+            6,
+            6,
+            5,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            5,
+            9,
+            6,
+            5,
+            11,
+            78
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "CTRL",
+            "MDD",
+            "Stress"
+        ],
+        "values": [
+            {
+                "count": 161,
+                "selected": true,
+                "value": "CTRL"
+            },
+            {
+                "count": 141,
+                "selected": true,
+                "value": "MDD"
+            },
+            {
+                "count": 39,
+                "selected": true,
+                "value": "Stress"
+            }
+        ],
+        "type": "phenotype",
+        "label": "SAMPLE ATTRIBUTE: phenotype",
+        "data": [
+            161,
+            141,
+            39
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "NA",
+            "No",
+            "no",
+            "yes"
+        ],
+        "values": [
+            {
+                "count": 97,
+                "selected": true,
+                "value": "no"
+            },
+            {
+                "count": 194,
+                "selected": true,
+                "value": "NA"
+            },
+            {
+                "count": 23,
+                "selected": true,
+                "value": "No"
+            },
+            {
+                "count": 27,
+                "selected": true,
+                "value": "yes"
+            }
+        ],
+        "type": "alcool",
+        "label": "SAMPLE ATTRIBUTE: alcool",
+        "data": [
+            194,
+            23,
+            97,
+            27
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "NA",
+            "No",
+            "no",
+            "yes"
+        ],
+        "values": [
+            {
+                "count": 119,
+                "selected": true,
+                "value": "no"
+            },
+            {
+                "count": 194,
+                "selected": true,
+                "value": "NA"
+            },
+            {
+                "count": 23,
+                "selected": true,
+                "value": "No"
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": "yes"
+            }
+        ],
+        "type": "drugs",
+        "label": "SAMPLE ATTRIBUTE: drugs",
+        "data": [
+            194,
+            23,
+            119,
+            5
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "NA",
+            "cannabis",
+            "no"
+        ],
+        "values": [
+            {
+                "count": 142,
+                "selected": true,
+                "value": "no"
+            },
+            {
+                "count": 194,
+                "selected": true,
+                "value": "NA"
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": "cannabis"
+            }
+        ],
+        "type": "drug type",
+        "label": "SAMPLE ATTRIBUTE: drug type",
+        "data": [
+            194,
+            5,
+            142
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "NA",
+            "no",
+            "yes"
+        ],
+        "values": [
+            {
+                "count": 99,
+                "selected": true,
+                "value": "no"
+            },
+            {
+                "count": 153,
+                "selected": true,
+                "value": "NA"
+            },
+            {
+                "count": 89,
+                "selected": true,
+                "value": "yes"
+            }
+        ],
+        "type": "medication",
+        "label": "SAMPLE ATTRIBUTE: medication",
+        "data": [
+            153,
+            99,
+            89
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "AD",
+            "AP",
+            "Lithium",
+            "NA",
+            "anticonvulsivant",
+            "no"
+        ],
+        "values": [
+            {
+                "count": 99,
+                "selected": true,
+                "value": "no"
+            },
+            {
+                "count": 159,
+                "selected": true,
+                "value": "NA"
+            },
+            {
+                "count": 55,
+                "selected": true,
+                "value": "AD"
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": "Lithium"
+            },
+            {
+                "count": 11,
+                "selected": true,
+                "value": "AP"
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": "anticonvulsivant"
+            }
+        ],
+        "type": "medication type",
+        "label": "SAMPLE ATTRIBUTE: medication type",
+        "data": [
+            55,
+            11,
+            12,
+            159,
+            5,
+            99
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "NA",
+            "no",
+            "yes (heavy)",
+            "yes(moderate)"
+        ],
+        "values": [
+            {
+                "count": 101,
+                "selected": true,
+                "value": "yes (heavy)"
+            },
+            {
+                "count": 79,
+                "selected": true,
+                "value": "no"
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": "yes(moderate)"
+            },
+            {
+                "count": 155,
+                "selected": true,
+                "value": "NA"
+            }
+        ],
+        "type": "smoking",
+        "label": "SAMPLE ATTRIBUTE: smoking",
+        "data": [
+            155,
+            79,
+            101,
+            6
+        ]
+    },
+    {
+        "selected": true,
+        "labels": [
+            "10",
+            "4.3",
+            "4.4",
+            "4.6",
+            "4.8",
+            "4.9",
+            "5.1",
+            "5.2",
+            "5.3",
+            "5.4",
+            "5.5",
+            "5.6",
+            "5.7",
+            "5.8",
+            "5.9",
+            "6",
+            "6.1",
+            "6.2",
+            "6.3",
+            "6.4",
+            "6.5",
+            "6.6",
+            "6.7",
+            "6.8",
+            "6.9",
+            "7",
+            "7.1",
+            "7.2",
+            "7.3",
+            "7.4",
+            "7.5",
+            "7.6",
+            "7.7",
+            "7.8",
+            "7.9",
+            "8",
+            "8.1",
+            "8.2",
+            "8.3",
+            "8.4",
+            "8.5",
+            "8.6",
+            "8.7",
+            "8.8",
+            "8.9",
+            "9",
+            "9.1",
+            "9.2",
+            "9.3",
+            "9.4",
+            "9.5",
+            "9.7",
+            "9.8"
+        ],
+        "values": [
+            {
+                "count": 10,
+                "selected": true,
+                "value": 8
+            },
+            {
+                "count": 13,
+                "selected": true,
+                "value": 7.2
+            },
+            {
+                "count": 14,
+                "selected": true,
+                "value": 7.6
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 7.3
+            },
+            {
+                "count": 20,
+                "selected": true,
+                "value": 7.7
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 6.6
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 6.4
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 7.4
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 5.1
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 7
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 6.7
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.3
+            },
+            {
+                "count": 7,
+                "selected": true,
+                "value": 9.4
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 5.9
+            },
+            {
+                "count": 7,
+                "selected": true,
+                "value": 8.7
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 8.2
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 8.3
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 7.1
+            },
+            {
+                "count": 13,
+                "selected": true,
+                "value": 7.8
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 6
+            },
+            {
+                "count": 17,
+                "selected": true,
+                "value": 7.5
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 5.8
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.5
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 8.6
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 9.1
+            },
+            {
+                "count": 4,
+                "selected": true,
+                "value": 8.1
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 6.8
+            },
+            {
+                "count": 12,
+                "selected": true,
+                "value": 8.8
+            },
+            {
+                "count": 8,
+                "selected": true,
+                "value": 8.5
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 8.4
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 4.4
+            },
+            {
+                "count": 2,
+                "selected": true,
+                "value": 4.9
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 5.6
+            },
+            {
+                "count": 7,
+                "selected": true,
+                "value": 6.1
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 5.2
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 5.5
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 4.6
+            },
+            {
+                "count": 7,
+                "selected": true,
+                "value": 5.7
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 6.2
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 4.3
+            },
+            {
+                "count": 5,
+                "selected": true,
+                "value": 7.9
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 5.4
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 5.3
+            },
+            {
+                "count": 7,
+                "selected": true,
+                "value": 6.9
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 4.8
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 9.2
+            },
+            {
+                "count": 10,
+                "selected": true,
+                "value": 9
+            },
+            {
+                "count": 6,
+                "selected": true,
+                "value": 9.3
+            },
+            {
+                "count": 9,
+                "selected": true,
+                "value": 8.9
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 9.8
+            },
+            {
+                "count": 3,
+                "selected": true,
+                "value": 9.5
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 9.7
+            },
+            {
+                "count": 1,
+                "selected": true,
+                "value": 10
+            }
+        ],
+        "type": "rin",
+        "label": "SAMPLE ATTRIBUTE: rin",
+        "data": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1,
+            3,
+            5,
+            7,
+            6,
+            5,
+            3,
+            7,
+            5,
+            5,
+            9,
+            5,
+            4,
+            10,
+            12,
+            7,
+            3,
+            6,
+            13,
+            12,
+            9,
+            17,
+            14,
+            20,
+            13,
+            5,
+            10,
+            4,
+            9,
+            12,
+            3,
+            8,
+            3,
+            7,
+            12,
+            9,
+            10,
+            12,
+            6,
+            6,
+            7,
+            3,
+            1,
+            1
+        ]
+    }
+]

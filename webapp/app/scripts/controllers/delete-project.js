@@ -8,14 +8,14 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('DeleteProjectCtrl', function ($scope, $routeParams, userService, $http, $location, toaster) {
+  .controller('DeleteProjectCtrl', function ($scope, $routeParams, userService, $http, $location, toaster, Utils) {
 	  $scope.user = userService;
 	  
 	  $scope.projectId = $routeParams.projectId;
 	  
 	  $scope.send = function(){
 		  
-		  var delete_api = "http://localhost/sra_django_api/user/delete_project/";
+		  var delete_api = Utils.REST_API + "user/delete_project/";
 	      console.log("LOGIN", delete_api, $scope.user);
 		  
 		  $http.post(delete_api, {username: $scope.user.username, project_id: $scope.projectId})

@@ -8,7 +8,7 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('CreateNewProjectCtrl', function ($scope, userService, $http, $location, toaster) {
+  .controller('CreateNewProjectCtrl', function ($scope, userService, $http, $location, toaster, Utils) {
     
     $scope.user = userService;
     
@@ -19,7 +19,7 @@ angular.module('sraSearchApp')
     
     $scope.send = function(){
 		  
-		  var login_api = "http://localhost/sra_django_api/user/create_new_project/";
+		  var login_api = Utils.REST_API + "user/create_new_project/";
 	      console.log("LOGIN", login_api, $scope.user);
 		  
 		  $http.post(login_api, $scope.project)

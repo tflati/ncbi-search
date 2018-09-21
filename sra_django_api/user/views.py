@@ -119,6 +119,21 @@ def get_project(request, username, project_id):
         bf = GData(dict_type=OrderedDict)
         data_object = fromstring(open(filepath, "r").read())
         dataset = bf.data(data_object)
+        
+        for exp in dataset["EXPERIMENT_PACKAGE_SET"]["EXPERIMENT_PACKAGE"]:
+            run_sets = exp["RUN_SET"]
+            print("RUN_SETS", type(run_sets), type(run_sets) is OrderedDict, type(run_sets) is dict)
+            if type(run_sets) is OrderedDict: run_sets = [run_sets]
+            for run_set in run_sets:
+                runs = run_set["RUN"]
+                print("RUNS", type(runs))
+                if type(runs) is OrderedDict: runs = [runs]
+                for run in runs:
+                    try:
+                        del run["tax_analysis"]
+                    except KeyError:
+                        pass
+        
         result["dataset"] = dataset
     
     filepath = p.base_path + "filters.json"
@@ -153,6 +168,8 @@ def create_new_project(request):
     
     return HttpResponse(json.dumps(result))
 
+
+CACHE_DIR = os.path.dirname(__file__) + "/../sra_django_api/cache/"
 def save_project(request, username, project_id):
     
     data = json.loads(request.body.decode("utf-8"))
@@ -180,24 +197,24 @@ def save_project(request, username, project_id):
     p.no_runs_all = project["no_runs_all"]
     p.size = project["size"]
     p.size_all = project["size_all"]
+    p.search_query_text = project["search_query_text"]
+    p.database = project["database"]
+    p.note = project["note"]
     p.save()
     
     title = p.title
     
-    bf = GData(dict_type=OrderedDict)
-    #xml_data = bf.etree(data={'p': {'@id': 'main', '$': 'Hello', 'b': 'bold'}}, root=Element('root'))
-    xml_data = bf.etree(data=exp_tree, root=Element("EXPERIMENT_PACKAGE_SET"))
-    print("Created xml_data")
-    #print(xml_data)
-    #print(tostring(xml_data))
-    
-#     print("Creating GData")
-#     xml_data = gd.etree(data=data)
-    with open(p.base_path + "dataset.xml", "w") as f:
-        s = tostring(xml_data)
-        m = minidom.parseString(s)
-        x = m.toprettyxml(indent="   ")
-        f.write(x)
+    cache_file = CACHE_DIR + p.search_query_text + ".xml"
+    if os.path.exists(cache_file):
+        shutil.copyfile(cache_file, p.base_path + "dataset.xml")
+#     bf = GData(dict_type=OrderedDict)
+#     xml_data = bf.etree(data=exp_tree, root=Element("EXPERIMENT_PACKAGE_SET"))
+#     print("Created xml_data")
+#     with open(p.base_path + "dataset.xml", "w") as f:
+#         s = tostring(xml_data)
+#         m = minidom.parseString(s)
+#         x = m.toprettyxml(indent="   ")
+#         f.write(x)
     
     with open(p.base_path + "filters.json", "w") as f:
        json.dump(filters, f, indent = 4) 

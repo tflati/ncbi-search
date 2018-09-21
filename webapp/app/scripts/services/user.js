@@ -7,7 +7,7 @@
  * # user
  * Service in the sraSearchApp.
  */
-angular.module('sraSearchApp').service('userService', function ($cookies, $location, $http, toaster) {
+angular.module('sraSearchApp').service('userService', function ($cookies, $location, $http, toaster, Utils) {
 	
 	var thisService = this;
 	    
@@ -26,7 +26,7 @@ angular.module('sraSearchApp').service('userService', function ($cookies, $locat
 	    };
 	    
 	    this.logout = function(){
-	    	var logout_api = "http://localhost/sra_django_api/user/logout/";
+	    	var logout_api = Utils.REST_API + "user/logout/";
 		      console.log("LOGOUT", logout_api, this.username);
 			  
 			  $http.get(logout_api)

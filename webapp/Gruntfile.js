@@ -9,6 +9,8 @@
 
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-contrib-uglify-es');
+  
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -387,7 +389,14 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }]
+        }, {
+            expand: true,
+            flatten: true,
+            dest: '<%= yeoman.dist %>/webfonts',
+            src: ['bower_components/components-font-awesome/webfonts/*'],
+            filter: 'isFile'
+          }
+        ]
       },
       styles: {
         expand: true,
@@ -421,6 +430,11 @@ module.exports = function (grunt) {
     }
   });
 
+  
+  
+  
+  
+  
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {

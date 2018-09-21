@@ -16,6 +16,8 @@ class User(models.Model):
 class Project(models.Model):
     project_id = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
+    search_query_text = models.CharField(max_length=300)
+    database = models.CharField(max_length=100)
     creation_date = models.DateTimeField(auto_now_add=True)
     base_path = models.CharField(max_length=2000)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -27,3 +29,4 @@ class Project(models.Model):
     no_runs_all = models.PositiveIntegerField(default=0)
     size = models.BigIntegerField(default=0)
     size_all = models.PositiveIntegerField(default=0)
+    note = models.CharField(max_length=16384)

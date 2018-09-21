@@ -8,15 +8,15 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('LoginCtrl', function ($scope, $http, $window, toaster, userService, $location, $timeout) {
+  .controller('LoginCtrl', function ($scope, $http, $window, toaster, userService, $location, $timeout, Utils) {
 	  
 	  $scope.userService = userService;
 	  
-	  $scope.user = {email: "tiziano.flati@gmail.com", password:"arc0bal3n0"};
+	  $scope.user = {}; // {email: "tiziano.flati@gmail.com", password:"arc0bal3n0"};
 	  
 	  $scope.send = function(){
 		  
-		  var login_api = "http://localhost/sra_django_api/user/login/";
+		  var login_api = Utils.REST_API + "user/login/";
 	      console.log("LOGIN", login_api, $scope.user);
 		  
 		  $http.post(login_api, $scope.user)

@@ -28,12 +28,12 @@
 					<th ng-repeat="(key, value) in projects[0]">{{key | replace:'_':' '}}</th>
 				</tr>
 			</thead>
-			<body>
+			<tbody>
 				<tr ng-repeat="project in projects track by $index">
 					<td><i class="fas fa-book fa-2x" style="color: #2196f3;"></i></td>
 					<td>
-						<md-button href="#!search/{{project.project_id}}" title="Click here to add data to this project" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Search">
-						  <i class="fas fa-search" md-colors="{color:'primary'}"></i> <b>Add data</b>
+						<md-button href="#!search/{{project.project_id}}" title="Click here to edit data to this project" class="md-raised md-accent md-hue-3 toolbar-button" aria-label="Search">
+						  <i class="fas fa-search" md-colors="{color:'primary'}"></i> <b>Edit data</b>
 						</md-button>
 					</td>
 					<td>
@@ -46,7 +46,19 @@
 						<span ng-if="f.title" title="{{f.title}}">{{f.value}}</span>
 					</td>
 				</tr>
-			</body>
+			</tbody>
 		</table>
 	</div>
 </div>
+
+
+<!-- 			<md-list flex> -->
+<!-- 				<div paging -->
+<!-- 					  page="1"  -->
+<!-- 					  page-size="10"  -->
+<!-- 					  total="result | filterApplier:filters | length" -->
+<!-- 					  paging-action="goToPage('Page clicked', result | filterApplier:filters, page, pageSize, total)"> -->
+<!-- 	        	</div> -->
+<!--         	</md-list> -->
+
+

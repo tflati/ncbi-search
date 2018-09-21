@@ -15,7 +15,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -24,7 +24,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-	<toaster-container></toaster-container>
+	<toaster-container toaster-options="{'position-class': 'toast-bottom-right'}"></toaster-container>
 
     <div layout="column" style="height:100%">
 	    <div class="container" style="height:100%">
@@ -100,6 +100,7 @@
         <script src="scripts/controllers/delete-project.js"></script>
         <script src="scripts/filters/byteformatter.js"></script>
         <script src="scripts/filters/replace.js"></script>
+        <script src="scripts/controllers/notedialog.js"></script>
         <!-- endbuild -->
 </body>
 </html>

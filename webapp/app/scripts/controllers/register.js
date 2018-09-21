@@ -8,13 +8,13 @@
  * Controller of the sraSearchApp
  */
 angular.module('sraSearchApp')
-  .controller('RegisterCtrl', function ($scope, $timeout, $location, $window, $http, toaster) {
+  .controller('RegisterCtrl', function ($scope, $timeout, $location, $window, $http, toaster, Utils) {
 	  
-	  $scope.user = {username: "Tiziano", email: "tiziano.flati@gmail.com", first_name:"Tiziano", last_name: "Flati", affiliation:"CINECA", password: "arc0bal3n0", repassword: "arc0bal3n0"};
+	  $scope.user = {}; // {username: "Tiziano", email: "tiziano.flati@gmail.com", first_name:"Tiziano", last_name: "Flati", affiliation:"CINECA", password: "arc0bal3n0", repassword: "arc0bal3n0"};
 	  
 	  $scope.send = function(){
 		  
-		  var register_api = "http://localhost/sra_django_api/user/register/";
+		  var register_api = Utils.REST_API + "user/register/";
 	      console.log("SEARCH", register_api, $scope.user);
 		  
 		  $http.post(register_api, $scope.user)
